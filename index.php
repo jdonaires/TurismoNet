@@ -11,7 +11,6 @@
       <div class="contenedor-menu">
         <div class="contenedor-opciones">
           <li><a href="#">Inicio</a></li>
-          <li><a href="#">Contactanos</a></li>
           <li><a href="#">Servicios</a></li>
           <li><a href="#">Login</a></li>
         </div>
@@ -20,7 +19,14 @@
       </div>
       <div class="contenedor-logo">
         <img src="DESIGNER/IMG/logo.png">
+        <li><a href="#">Nosotros</a></li>
       </div>
+      <h2>Descubre con Nosotros</h2>
+      <h3>Descubre las Lugares, Sabor, Tradición de la Región de Ica</h3>
+    </div>
+
+    <div class="contenedor-lugares">
+
     </div>
   </body>
 </html>
