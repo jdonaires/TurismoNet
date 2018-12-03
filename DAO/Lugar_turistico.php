@@ -1,5 +1,5 @@
 <?php
-require_once('../DAL/DBAccess.php');
+require_once('../DAL/DBAcces.php');
 require_once('../BOL/turistico.php');
 
 class TuristicoDAO
