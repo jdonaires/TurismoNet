@@ -2,7 +2,7 @@
 require_once('../DAL/DBAccess.php');
 require_once('../BOL/Persona.php');
 
-class TuristicoDAO
+class PersonaDao
 {
 	private $pdo;
 
@@ -18,7 +18,7 @@ class TuristicoDAO
 		{
 		$statement = $this->pdo->prepare("CALL regPersona(?,?,?,?,?,?,?,?)");
     $statement->bindParam(1,$persona->__GET('correo'));
-		$statement->bindParam(2,$persona->__GET('contrasena'));
+		$statement->bindParam(2,$persona->__GET('contraseña'));
 		$statement->bindParam(3,$persona->__GET('nombres'));
   	$statement->bindParam(4,$persona->__GET('apPaterno'));
 		$statement->bindParam(5,$persona->__GET('apMaterno'));

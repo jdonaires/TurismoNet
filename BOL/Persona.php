@@ -8,7 +8,7 @@ class Persona
 	private $correo;
 	private $celular;
   private $sexo;
-	private $contrasena;
+	private $contraseña;
 
 	public function __GET($x)
 	{
