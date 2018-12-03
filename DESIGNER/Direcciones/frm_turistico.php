@@ -1,6 +1,6 @@
 <?php
-require_once('../Direcciones/DESIGNER/BOL/Turistico.php');
-require_once('../Direcciones/DESIGNER/DAO/Lugar_turistico.php');
+require_once('../../../BOL/Turistico.php');
+require_once('../../../DAO/Lugar_turistico.php');
 
 $per = new turistico();
 $perDAO = new TuristicoDAO();
