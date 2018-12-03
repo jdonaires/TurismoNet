@@ -1,6 +1,6 @@
 <?php
-require_once('../DAL/DBAcces.php');
-require_once('../BOL/turistico.php');
+require_once('../DAL/DBAccess.php');
+require_once('../BOL/Turistico.php');
 
 class TuristicoDAO
 {

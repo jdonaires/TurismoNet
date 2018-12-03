@@ -1,6 +1,6 @@
 <?php
-require_once('../DESIGNER/BOL/turistico.php');
-require_once('../DESIGNER/DAO/Lugar_turistico.php');
+require_once('../BOL/Turistico.php');
+require_once('../DAO/Lugar_turistico.php');
 
 $per = new turistico();
 $perDAO = new TuristicoDAO();
@@ -20,7 +20,7 @@ if(isset($_POST['guardar']))
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>CRUD</title>
+		<title>s</title>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 	</head>
     <body style="padding:15px;">
