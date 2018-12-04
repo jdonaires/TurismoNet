@@ -1,5 +1,5 @@
 <?php
-require_once('../DAL/DBAccess.php');
+require_once("../DAL/DBAccess.php");
 require_once('../BOL/Turistico.php');
 
 class TuristicoDAO
@@ -72,12 +72,13 @@ class TuristicoDAO
 			$statement = $this->pdo->prepare("call listar_lugarTuristico");
 			$statement->execute();
 
-			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r) {
+			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
 				$lisLugar = new Turistico();
 
-				$lisLugar->__SET('titulo',$r->titulo);
-				$lisLugar->__SET('imgLugar',$r->imgLugar);
-				$lisLugar->__SET('descripcion',$r->descripcion);
+				$lisLugar->__SET('titulo',	$r->titulo);
+				$lisLugar->__SET('imgLugar',	$r->imgLugar);
+				$lisLugar->__SET('descripcion',	$r->descripcion);
 
 				$result[] = $lisLugar;
 			}

@@ -1,17 +1,9 @@
-<?php
-require_once('DAO/Lugar_turistico.php');
-
-$list = new Lugar_turistico();
-$resul = array();
-$resul = $list->List_LugarPri();
- ?>
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>ICA | Turismo Net</title>
-    <link rel="stylesheet" href="DESIGNER/CSS/index.css">
+    <link rel="stylesheet" href="CSS/index.css">
   </head>
   <body>
     <div class="contenedor-fondo">
@@ -26,7 +18,7 @@ $resul = $list->List_LugarPri();
         </div>
       </div>
       <div class="contenedor-logo">
-        <img src="DESIGNER/IMG/logo.png">
+        <img src="IMG/logo.png">
         <li><a href="#">Nosotros</a></li>
       </div>
       <h2>Descubre con Nosotros</h2>
@@ -36,11 +28,18 @@ $resul = $list->List_LugarPri();
     <div class="contenedor-lugares">
       <!--PHP PARA LISTAR-->
       <?php
-      foreach ($resul as $value) {
+      require_once("../DAO/Lugar_turistico.php");
+      $list = new TuristicoDAO();
+      $resl = array();
+      $resl = $list->List_LugarPri();
+       ?>
+      <?php
+      foreach ($resl as $value) {
         ?>
-        <h3><?php echo $value->__GET('titutlo'); ?></h3>
+        <h3><?php echo $value->__GET('titulo'); ?></h3>
         <img src="<?php echo $value->__GET('imgLugar'); ?>" alt="">
         <h3><?php echo $value->__GET('descripcion'); ?></h3>
+        <input type="button" name="" value="Mostrar mas">
         <?php
       }
        ?>
