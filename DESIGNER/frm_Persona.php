@@ -8,13 +8,13 @@ $perDAO = new PersonaDao ();
 if(isset($_POST['guardar']))
 {
 	$per->__SET('correo',          $_POST['correo']);
-	$per->__SET('contraseña',        $_POST['contraseña']);
-	$per->__SET('nombres',               $_POST['nombres']);
-  $per->__SET('apPaterno',             $_POST['apPaterno']);
-	$per->__SET('apMaterno',                    $_POST['apMaterno']);
-  $per->__SET('dni',                    $_POST['dni']);
-  $per->__SET('celular',                    $_POST['celular']);
-  $per->__SET('sexo',                    $_POST['sexo']);
+	$per->__SET('contraseña',      $_POST['contraseña']);
+	$per->__SET('nombres',         $_POST['nombres']);
+  $per->__SET('apPaterno',       $_POST['apPaterno']);
+	$per->__SET('apMaterno',       $_POST['apMaterno']);
+  $per->__SET('dni',             $_POST['dni']);
+  $per->__SET('celular',         $_POST['celular']);
+  $per->__SET('sexo',            $_POST['sexo']);
 	$perDAO->Registrar_Persona($per);
 	header('Location: frm_Persona.php');
 }
@@ -23,7 +23,7 @@ if(isset($_POST['guardar']))
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>s</title>
+		<title>persona</title>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 	</head>
     <body style="padding:15px;">
@@ -51,7 +51,7 @@ if(isset($_POST['guardar']))
                             <td><input type="text" name="apPaterno" value="" style="width:100%;" /></td>
                         </tr>
                         <tr>
-                            <th style="text-align:left;">Apellido Materno/th>
+                            <th style="text-align:left;">Apellido Materno</th>
                             <td><input type="text" name="apMaterno" value="" style="width:100%;" /></td>
                         </tr>
                         <tr>
@@ -60,7 +60,7 @@ if(isset($_POST['guardar']))
                         </tr>
                         <tr>
                             <th style="text-align:left;">Celular</th>
-                            <td><input type="text" name="Celular" value="" style="width:100%;" /></td>
+                            <td><input type="text" name="celular" value="" style="width:100%;" /></td>
 
                         </tr>
                         <tr>
