@@ -10,7 +10,7 @@ if(isset($_POST['guardar']))
 	$per->__SET('titulo',          $_POST['titulo']);
 	$per->__SET('descripcion',        $_POST['descripcion']);
 	$per->__SET('imgLugar',               $_POST['imgLugar']);
-  $per->__SET('idUbicacion',             $_POST['idUbicacion']);
+  $per->__SET('Provincia',             $_POST['Provincia']);
 	$per->__SET('fecha',                    $_POST['fecha']);
 	$perDAO->Registrar_Turistico($per);
 	header('Location: frm_turistico.php');
@@ -31,10 +31,6 @@ if(isset($_POST['guardar']))
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
 
                     <table style="width:500px;" border="0">
-                      <tr>
-                          <th style="text-align:left;">idLugar</th>
-                          <td><input type="text" name="idLugar" value="" style="width:100%;" /></td>
-                      </tr>
                         <tr>
                             <th style="text-align:left;">Titulo</th>
                             <td><input type="text" name="titulo" value="" style="width:100%;" /></td>
@@ -50,7 +46,7 @@ if(isset($_POST['guardar']))
                         </tr>
                         <tr>
                             <th style="text-align:left;">Ubicacion</th>
-                            <td><input type="text" name="idUbicacion" value="" style="width:100%;" /></td>
+                            <td><input type="text" name="Provincia" value="" style="width:100%;" /></td>
                         </tr>
                         <tr>
                             <th style="text-align:left;">Fecha</th>
@@ -69,6 +65,5 @@ if(isset($_POST['guardar']))
             </div>
         </div>
 
-				<!--ESTA CONDICION SIRVE PARA REALIZAR BUSQUEDA POR DNI-->
     </body>
 </html>

@@ -20,7 +20,7 @@ class TuristicoDAO
     $statement->bindParam(1,$persona->__GET('titulo'));
 		$statement->bindParam(2,$persona->__GET('descripcion'));
 		$statement->bindParam(3,$persona->__GET('imgLugar'));
-  	$statement->bindParam(4,$persona->__GET('idUbicacion'));
+  	$statement->bindParam(4,$persona->__GET('Provincia'));
 		$statement->bindParam(5,$persona->__GET('fecha'));
     $statement -> execute();
 
@@ -29,6 +29,7 @@ class TuristicoDAO
 			die($e->getMessage());
 		}
 	}
+
 	public function Listar_Turistico(Turistico $persona)
 	{
 		try
@@ -41,7 +42,7 @@ class TuristicoDAO
 
 			foreach($statement->fetchAll(PDO::FETCH_OBJ) as $r)
 			{
-				$per = new turistico();
+				$per = new Turistico();
 
 				$per->__SET('idLugar', $r->idLugar);
 				$per->__SET('titulo', $r->titulo);
@@ -61,6 +62,30 @@ class TuristicoDAO
 		}
 	}
 
+
+	// LISTAR LUGARES EN INDEX
+	public function List_LugarPri()
+	{
+		try {
+			$result = array();
+
+			$statement = $this->pdo->prepare("call listar_lugarTuristico");
+			$statement->execute();
+
+			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r) {
+				$lisLugar = new Turistico();
+
+				$lisLugar->__SET('titulo',$r->titulo);
+				$lisLugar->__SET('imgLugar',$r->imgLugar);
+				$lisLugar->__SET('descripcion',$r->descripcion);
+
+				$result[] = $lisLugar;
+			}
+			return $result;
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
 }
 
 ?>

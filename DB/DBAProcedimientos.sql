@@ -9,11 +9,11 @@ CREATE PROCEDURE regLugarTuristico
 	_descripcion TEXT,
 	_imgLugar MEDIUMBLOB,
 	_idUbicacion VARCHAR(4),
-	_fecha DATE,
+	_fecha DATE
 )
 BEGIN
-	DECLARE _idLugar CHAR(4),
-	DECLARE _idUbicacion CHAR(4),
+	DECLARE _idLugar CHAR(4);
+	DECLARE _idUbicacion CHAR(4);
 	SET _idLugar = (SELECT (CONCAT('L',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),3)))FROM LugarTuristico); -- GENERAR CODIGO DE ID DEL LUGAR TURISTICO
 	
 	IF _idLugar <> NULL THEN
@@ -24,8 +24,8 @@ BEGIN
 			INSERT INTO LugarTuristico (idLugar,titulo,descripcion,imgLugar,idUbicacion,fecha)
 			VALUES (_idLugar,_titulo,_descripcion,_imgLugar,_idUbicacion,fecha);
 		
-		END
-	END
+		END IF;
+	END IF;
 END $$
 DELIMITER ;
 
@@ -41,13 +41,13 @@ CREATE PROCEDURE regPersona
 	_apMaterno VARCHAR(20),
 	_dni CHAR(8), -- DNI UNICO POR PERSONA
 	_celular CHAR(9), -- SE NECESITA PARA REALIZAR CHARLA PERSONAL
-	_sexo CHAR(1),
+	_sexo CHAR(1)
 )
 BEGIN
-	DECLARE _idPersona CHAR(5),
-	DECLARE _idUsuario CHAR(5),
-	DECLARE _obtIdPersona CHAR(5), -- OBTENEMOS EL ID DE LA PERSONA 
-	DECLARE _validarDni CHAR(8),
+	DECLARE _idPersona CHAR(5);
+	DECLARE _idUsuario CHAR(5);
+	DECLARE _obtIdPersona CHAR(5); -- OBTENEMOS EL ID DE LA PERSONA 
+	DECLARE _validarDni CHAR(8);
 	SET _idPersona = (SELECT (CONCAT('P',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM Persona); -- GENERAR CODIGO DE ID DE PERSONA
 	SET _idUsuario = (SELECT (CONCAT('U',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM usuarioPersona); -- GENERAR CODIGO DE ID DE USUARIO DE LA PERSONA
 	SET _obtIdPersona = (SELECT DISTINCT idPersona FROM Persona WHERE dni = _dni); -- OBTENEMOS EL ID DE LA PERSONA 
@@ -111,5 +111,14 @@ BEGIN
 		
 		END IF;
 	END IF;
+END $$
+DELIMITER ;
+
+
+/*PROCEDIMIENTO PARA LISTAR LUGAR - VENTANA PRINCIPAL*/
+DELIMITER $$
+CREATE PROCEDURE listar_lugarTuristico ()
+BEGIN
+	SELECT titulo, imgLugar, descripcion FROM LugarTuristico;
 END $$
 DELIMITER ;

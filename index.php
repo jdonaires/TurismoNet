@@ -1,3 +1,11 @@
+<?php
+require_once('DAO/Lugar_turistico.php');
+
+$list = new Lugar_turistico();
+$resul = array();
+$resul = $list->List_LugarPri();
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,7 +34,16 @@
     </div>
 
     <div class="contenedor-lugares">
-
+      <!--PHP PARA LISTAR-->
+      <?php
+      foreach ($resul as $value) {
+        ?>
+        <h3><?php echo $value->__GET('titutlo'); ?></h3>
+        <img src="<?php echo $value->__GET('imgLugar'); ?>" alt="">
+        <h3><?php echo $value->__GET('descripcion'); ?></h3>
+        <?php
+      }
+       ?>
     </div>
   </body>
 </html>
