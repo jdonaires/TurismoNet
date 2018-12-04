@@ -20,7 +20,7 @@
           </div>
           <div class="contenedor-botones">
             <input type="button" name="" value="Ingresar">
-            <input type="button" name="" value="Cancelar">
+            <input type="button" name="" value="Cancelar" href="index.php">
           </div>
         </form>
       </div>

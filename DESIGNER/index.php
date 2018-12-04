@@ -12,7 +12,7 @@
         <div class="contenedor-opciones">
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Servicios</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="login.php">Login</a></li>
         </div>
         <div class="contenedor-redes">
         </div>
