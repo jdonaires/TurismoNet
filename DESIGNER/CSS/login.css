@@ -22,10 +22,11 @@ body {
 }
 
 .contenedor-fondo .contenedor-fomulario {
-background: rgba(255, 255, 255, 1);
-border: none;
-border-radius: 8px;
-width: 30%;
+  background: rgba(255, 255, 255, 1);
+  border: none;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: -1px 0px 15px 4px rgba(0,0,0,0.70)
 }
 
 .contenedor-fondo .contenedor-fomulario h4 {
@@ -108,4 +109,15 @@ width: 30%;
 
 .contenedor-fondo .contenedor-fomulario .contenedor-botones input[type="button"]:hover {
   background: rgba(  192, 57, 43, 1);
+}
+
+
+/*ESTILO PARA LOS ICONOS*/
+.contenedor-fondo .contenedor-fomulario .contenedor-usuario-contraseña .icono {
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  margin: auto;
+  margin-left: 27%;
+  margin-top: 10px;
 }
