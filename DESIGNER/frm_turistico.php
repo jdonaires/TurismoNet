@@ -28,7 +28,7 @@ if(isset($_POST['guardar']))
         <div class="pure-g">
             <div class="pure-u-1-12">
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" class="pure-form pure-form-stacked" style="margin-bottom:30px;">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" class="pure-form pure-form-stacked" enctype="multipart/form-data" style="margin-bottom:30px;">
 
                     <table style="width:500px;" border="0">
                         <tr>
@@ -41,7 +41,7 @@ if(isset($_POST['guardar']))
                         </tr>
                         <tr>
                             <th style="text-align:left;">Imagen del Lugar</th>
-                            <td><input type="file" name="imgLugar" value="" style="width:150|%;" /></td>
+                            <td><input type="file" name="imgLugar" value="" accept="image/jpeg,image/png" style="width:150|%;" /></td>
 
                         </tr>
                         <tr>

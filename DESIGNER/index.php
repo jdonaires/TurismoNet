@@ -36,10 +36,16 @@
       <?php
       foreach ($resl as $value) {
         ?>
-        <h3><?php echo $value->__GET('titulo'); ?></h3>
-        <img src="<?php echo $value->__GET('imgLugar'); ?>" alt="">
-        <h3><?php echo $value->__GET('descripcion'); ?></h3>
-        <input type="button" name="" value="Mostrar mas">
+        <div class="sub-contenedor">
+          <div class="contenedor-1">
+            <h3><?php echo $value->__GET('titulo'); ?></h3>
+            <img src="<?php echo $value->__GET('imgLugar'); ?>">
+          </div>
+          <div class="contenedor-2">
+            <h4><?php echo $value->__GET('descripcion'); ?></h4>
+            <input type="button" name="" value="Mostrar mas">
+          </div>
+        </div>
         <?php
       }
        ?>
