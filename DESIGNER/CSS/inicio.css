@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/*CONTENEDOR DEL LOGO*/
+.contenedor-logo {
+  position: relative;
+  background-color: #D35400;
+  width: 100%;
+  height: 60px;
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.contenedor-logo img{
+  width: 8%;
+  height: 55px;
+  margin-left: 50px;
+}
+
+.contenedor-logo li {
+  position: absolute;
+  display: inline-block;
+  text-decoration: none;
+  height: 100%;
+  margin-left: 70%;
+}
+
+.contenedor-logo li a {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  font-family: Arial;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 16px;
+  transition: all .5s ease;
+}
+
+.contenedor-logo li a:hover {
+  border-bottom: 2px solid #fff;
+  font-family: Arial;
+}
+
+
+/*menu div modificar bmr*/
+
+
+
+
+
+
+/*ESTILO PARA EL CONTENEDOR DEL MENU*/
+.contenedor .sub-contenedor1 {
+  display: inline-block;
+  float: center;
+  background: rgba(0,0,0,.8);
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/*CONTENEDOR DEL MENU AL LADO IZQUIERDO*/
+.contenedor .sub-contenedor1 .menu {
+  background: rgba(0, 121, 119,1);
+  width: 100%;
+  max-width: 250px;
+  height: 604px;
+}
+
+/*ENTORNO DONDE SE REALIZARA LAS OPERACIONES*/
+.contenedor .sub-contenedor1 .iframe {
+  background: rgba(237, 237, 237, 1);
+  width: 100%;
+  max-width: 1300px;
+  height: 604px;
+}
+
+/*ESTILOS PARA EL MENU*/
+.contenedor .sub-contenedor1 .menu nav ul li a {
+  padding: 10px 10px;
+  display: inline-block;
+  background: rgba(137, 137, 137,1);
+  border: none;
+  border-bottom: 2px solid #fff;
+  text-decoration: none;
+  width: 100%;
+  height: 50px;
+  text-align: left;
+  transition: all .5s ease;
+}
+
+.contenedor .sub-contenedor1 .menu nav ul li a {
+  color: #fff;
+  font-size: 20px;
+  font-family: Arial;
+  text-decoration: none;
+}
+
+.contenedor .sub-contenedor1 .menu nav ul li a:hover {
+  background: rgba(0, 121, 119,1);
+}
+
+.contenedor .sub-contenedor1 .menu nav ul li ul{
+  display: none;
+}
+
+.contenedor .sub-contenedor1 .menu nav ul li ul li a {
+  font-size: 16px;
+  padding: 11px 30px;
+  background: rgba(0, 0, 0,.8);
+}
+
+.contenedor .sub-contenedor1 .menu nav ul li ul li a:hover {
+  background: rgba(0, 121, 88,1);
+}
+
+/*ESTILO PARA QUE CUANDO SE QUEDE PRESIONADO*/
+.contenedor .sub-contenedor1 .menu nav ul .activado>a {
+  background: rgba(0, 121, 119,1);
+}
+
+
+
+/*ESTILOS PARA LOS ICONOS*/
+.contenedor .sub-contenedor1 .menu .icono.izquierda {
+  font-size: 18px;
+  margin: auto;
+  margin-right: 10px;
+}
+
+.contenedor .sub-contenedor1 .menu .icono.derecha {
+  float: right;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 5px;
+  margin-right: 20px;
+}
