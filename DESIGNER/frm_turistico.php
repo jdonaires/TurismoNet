@@ -10,7 +10,7 @@ if(isset($_POST['guardar']))
 	$per->__SET('titulo',          $_POST['titulo']);
 	$per->__SET('descripcion',        $_POST['descripcion']);
 	$per->__SET('imgLugar',               $_POST['imgLugar']);
-  $per->__SET('Provincia',             $_POST['Provincia']);
+    $per->__SET('Provincia',             $_POST['Provincia']);
 	$per->__SET('fecha',                    $_POST['fecha']);
 	$perDAO->Registrar_Turistico($per);
 	header('Location: frm_turistico.php');
@@ -41,7 +41,7 @@ if(isset($_POST['guardar']))
                         </tr>
                         <tr>
                             <th style="text-align:left;">Imagen del Lugar</th>
-                            <td><input type="file" name="imgLugar" value="" accept="image/jpeg,image/png" style="width:150|%;" /></td>
+                            <td><input type="text" name="imgLugar" value=""  style="width:150|%;" /></td>
 
                         </tr>
                         <tr>

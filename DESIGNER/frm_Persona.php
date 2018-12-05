@@ -69,7 +69,7 @@ if(isset($_POST['guardar']))
                         </tr>
                         <tr>
                             <td colspan="2">
-																<input type="submit" value="GUARDAR" name="guardar"class="pure-button pure-button-primary">
+								<input type="submit" value="GUARDAR" name="guardar"class="pure-button pure-button-primary">
 
                             </td>
                         </tr>
