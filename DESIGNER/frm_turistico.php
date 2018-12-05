@@ -9,7 +9,7 @@ if(isset($_POST['guardar']))
 {
 	$per->__SET('titulo',          $_POST['titulo']);
 	$per->__SET('descripcion',        $_POST['descripcion']);
-	$per->__SET('imgLugar',               $_POST['imgLugar']);
+	$per->__SET('imgLugar',               $_FILES['imgLugar']['name']);
   $per->__SET('Provincia',             $_POST['Provincia']);
 	$per->__SET('fecha',                    $_POST['fecha']);
 	$perDAO->Registrar_Turistico($per);

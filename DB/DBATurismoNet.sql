@@ -10,7 +10,8 @@ CREATE TABLE ProvinciaUbicacion (
  idUbicacion CHAR(4) NOT NULL, -- SE TIENE QUE AUTOGENERAR
  Provincia VARCHAR(20) NOT NULL, -- SOLO SE RELACIONARA POR PROVINCIA
  
-  CONSTRAINT pk_idUbicacion PRIMARY KEY (idUbicacion)
+  CONSTRAINT pk_idUbicacion PRIMARY KEY (idUbicacion),
+  CONSTRAINT uni_Provincia UNIQUE (Provincia)
 );
 
 /*CREAMOS LA TABLA DE LUGAR TURISTICO*/
