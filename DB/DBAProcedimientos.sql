@@ -84,7 +84,11 @@ CREATE PROCEDURE regusuarioEmpresa
 	_celular CHAR(9),
 	_fijo CHAR(9)
 )
+<<<<<<< HEAD
 BEGIN
+=======
+BEGIN,
+>>>>>>> 8099a816178eed5fa0c890c972c07b10b2af239f
 	DECLARE _idEmpresa CHAR(5);
 	DECLARE _idusuarioEmpresa CHAR(5);
 	DECLARE _obtidEmpresa CHAR(5); -- OBTENEMOS EL ID DE LA EMPRESA
