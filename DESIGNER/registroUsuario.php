@@ -5,6 +5,7 @@ require_once('../DAO/Registro_Persona.php');
 $per = new Persona();
 $perDAO = new PersonaDao();
 
+// REGISTRO DE USUARIO
 if (isset($_POST['guardar']))
 {
   $per->__SET('correo',     $_POST['correo']);
@@ -20,6 +21,8 @@ if (isset($_POST['guardar']))
 	header('Location: registroUsuario.php');
 }
 
+
+// REGISTRO DE USUARIO COMO EMPRESA
  ?>
 
 <!DOCTYPE html>
