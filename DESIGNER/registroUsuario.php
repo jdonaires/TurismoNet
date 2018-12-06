@@ -51,18 +51,20 @@ if (isset($_POST['guardar']))
 
   		<div class="secciones">
   			<article id="tab1">
-  				<h1>Inicio</h1>
-
+  				<h1>REGISTRO</h1>
           <div class="contenedor-usuario">
-            <form class="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+            <form class="form-usuario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+              <h4>Ingrese un Correo / Usuario</h4>
               <input type="text" name="correo" value="" placeholder="Ejemplo: turismonet@gmail.com" required>
+              <h4>Ingrese una Contrasseña / Password</h4>
               <input type="password" name="contraseña" value="" placeholder="Ingrese una contrasseña" required>
+              <h4 class="datos-personales">Datos Personales</h4>
               <input type="text" name="nombres" value="" placeholder="Ingrese sus Nombres Completos" required>
               <input type="text" name="apPaterno" value="" placeholder="Su Primer Apellido">
               <input type="text" name="apMaterno" value="" placeholder="Su Segundo Apellido">
               <input  class="numeros" type="text" name="dni" value="" placeholder="Ejemplo: 71233465" title="Ingrese su numero de DNI" maxlength="8">
               <input class="numeros" type="text" name="celular" value="" placeholder="9XX - XXX - XXX" title="Ingrese un Numero de Celular obmitir los espacios y el '-'" maxlength="9">
-              <select class="" name="sexo">
+              <select class="select-sexo" name="sexo">
                 <option value="M" <?php if($per=="M"){echo "Selected";}?> >Masculino</option>
                 <option value="F" <?php if($per=="F"){echo "Selected";}?> >Femenino</option>
               </select>
