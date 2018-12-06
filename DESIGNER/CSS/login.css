@@ -18,14 +18,14 @@ body {
   margin: auto;
   margin-left: 35%;
   margin-top: 14%;
-  width: 100%;
+  width: 30%;
 }
 
 .contenedor-fondo .contenedor-fomulario {
   background: rgba(255, 255, 255, 1);
   border: none;
   border-radius: 8px;
-  width: 30%;
+  /* width: 30%; */
   box-shadow: -1px 0px 15px 4px rgba(0,0,0,0.70)
 }
 
@@ -38,6 +38,24 @@ body {
   text-align: center;
   margin-top: 10px;
   width: 100%;
+}
+
+.contenedor-fondo .contenedor-fomulario a {
+  /* position: absolute;
+  display: inline-block; */
+  color: #000;
+  font-family: Arial;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: -80px;
+  text-decoration: none;
+  transition: all .5s ease;
+}
+
+.contenedor-fondo .contenedor-fomulario a:hover {
+  font-size: 13px;
+  margin-left: -90px;
 }
 
 .contenedor-fondo .contenedor-fomulario .contenedor-usuario-contraseña {

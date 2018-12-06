@@ -4,8 +4,8 @@ class DBAccess
   private $conn;
   private $host = "localhost";
   private $dbname = "turismonet";
-  private $user = "root";
-  private $pass = "1234";
+  private $user = "admin";
+  private $pass = "admin";
 
   public function __CONSTRUCT()
   {

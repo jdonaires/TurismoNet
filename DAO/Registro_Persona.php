@@ -16,16 +16,16 @@ class PersonaDao
 	{
 		try
 		{
-		$statement = $this->pdo->prepare("CALL regPersona(?,?,?,?,?,?,?,?)");
-    $statement->bindParam(1,$persona->__GET('correo'));
-		$statement->bindParam(2,$persona->__GET('contraseña'));
-		$statement->bindParam(3,$persona->__GET('nombres'));
-  	$statement->bindParam(4,$persona->__GET('apPaterno'));
-		$statement->bindParam(5,$persona->__GET('apMaterno'));
-    $statement->bindParam(6,$persona->__GET('dni'));
-    $statement->bindParam(7,$persona->__GET('celular'));
-    $statement->bindParam(8,$persona->__GET('sexo'));
-    $statement -> execute();
+			$statement = $this->pdo->prepare("CALL regPersona(?,?,?,?,?,?,?,?)");
+	    $statement->bindParam(1,$persona->__GET('correo'));
+			$statement->bindParam(2,$persona->__GET('contraseña'));
+			$statement->bindParam(3,$persona->__GET('nombres'));
+	  	$statement->bindParam(4,$persona->__GET('apPaterno'));
+			$statement->bindParam(5,$persona->__GET('apMaterno'));
+	    $statement->bindParam(6,$persona->__GET('dni'));
+	    $statement->bindParam(7,$persona->__GET('celular'));
+	    $statement->bindParam(8,$persona->__GET('sexo'));
+	    $statement -> execute();
 
 		} catch (Exception $e)
 		{
