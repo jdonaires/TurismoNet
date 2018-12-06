@@ -30,17 +30,6 @@ if (isset($_POST['guardar']))
     <link rel="stylesheet" href="CSS/registroUsuario.css">
   </head>
   <body>
-    <div class="contenedor-menu">
-      <div class="contenedor-opciones">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Empresas</a></li>
-        <li><a href="login.php">Ingresar</a></li>
-      </div>
-      <div class="contenedor-redes">
-      </div>
-    </div>
-
 
     <!--SECCION DE TABS-->
     <div class="wrap">
