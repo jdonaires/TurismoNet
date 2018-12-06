@@ -87,11 +87,7 @@ CREATE PROCEDURE regusuarioEmpresa
 	_celular CHAR(9),
 	_fijo CHAR(9)
 )
-<<<<<<< HEAD
 BEGIN
-=======
-BEGIN,
->>>>>>> 8099a816178eed5fa0c890c972c07b10b2af239f
 	DECLARE _idEmpresa CHAR(5);
 	DECLARE _idusuarioEmpresa CHAR(5);
 	DECLARE _obtidEmpresa CHAR(5); -- OBTENEMOS EL ID DE LA EMPRESA
@@ -109,13 +105,14 @@ BEGIN,
 
 			INSERT INTO Empresa (idEmpresa,nombreEmpresa,razonSocial,ruc,correoEmpresa,dirrecion,descripcion,celular,fijo)
 			VALUES (_idEmpresa,_nombreEmpresa,_razonSocial,_ruc,_correoEmpresa,_dirrecion,_descripcion,_celular,_fijo);
+			
+			IF _obtidEmpresa != '' THEN
+				IF _idusuarioEmpresa != '' THEN
 
-			IF _idusuarioEmpresa != '' THEN
-
-				INSERT INTO usuarioEmpresa (idusuarioEmpresa,idEmpresa,empresaCorreo,contraseñaEmpresa)
-				VALUES (_idusuarioEmpresa,_obtidEmpresa,_correoEmpresa,_contraseñaEmpresa);
+					INSERT INTO usuarioEmpresa (idusuarioEmpresa,idEmpresa,empresaCorreo,contraseñaEmpresa)
+					VALUES (_idusuarioEmpresa,_idEmpresa,_correoEmpresa,_contraseñaEmpresa);
+				END IF;
 			END IF;
-
 		END IF;
 	END IF;
 END $$
