@@ -1,6 +1,7 @@
 <?php
 require_once('../DAL/DBAccess.php');
 require_once('../BOL/Persona.php');
+require_once('../BOL/Empresa.php');
 
 class PersonaDao
 {
@@ -33,6 +34,28 @@ class PersonaDao
 		}
 	}
 
+	// FUNCION PARA REGISTRAR A LA EMPRESA COMO USUARIO
+	public function Reg_Empresa_User(Empresa $user_empresa)
+	{
+		try
+		{
+			$statement = $this->pdo->prepare("CALL regusuarioEmpresa (?,?,?,?,?,?,?,?,?)");
+			$statement->bindParam(1,$user_empresa->__GET('correoEmpresa'));
+			$statement->bindParam(2,$user_empresa->__GET('$contraseñaEmpresa'));
+			$statement->bindParam(3,$user_empresa->__GET('$nombreEmpresa'));
+			$statement->bindParam(4,$user_empresa->__GET('$razonSocial'));
+			$statement->bindParam(5,$user_empresa->__GET('ruc'));
+			$statement->bindParam(6,$user_empresa->__GET('dirrecion'));
+			$statement->bindParam(7,$user_empresa->__GET('descripcion'));
+			$statement->bindParam(8,$user_empresa->__GET('celular'));
+			$statement->bindParam(9,$user_empresa->__GET('fijo'));
+			$statement -> execute();
+
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
+	}
 
 }
 
