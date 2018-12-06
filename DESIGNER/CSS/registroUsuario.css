@@ -1,5 +1,9 @@
 body {
   font-family: Arial;
+  background: url(../IMG/registro.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .contenedor-menu {
