@@ -19,7 +19,7 @@
 /*CONTENEDOR DEL MENU*/
 .contenedor-menu {
   position: relative;
-  background: rgba(0,0,0,.9);
+  background: rgba(0,0,0,.95);
   width: 100%;
   height: 40px;
 }
@@ -116,14 +116,14 @@
 .contenedor-lugares {
   position: relative;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   width: 80%;
   border: none;
   border-radius: 10px;
   margin-top: -300px;
   margin-left: 10%;
   margin-bottom: 20px;
-  box-shadow: -1px 0px 15px 4px rgba(0,0,0,0.70)
+  box-shadow: -1px 0px 10px 4px rgba(0,0,0,0.5)
 }
 
 .contenedor-lugares .sub-contenedor {
