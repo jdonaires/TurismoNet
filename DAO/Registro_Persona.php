@@ -39,7 +39,7 @@ class PersonaDao
 	{
 		try
 		{
-			$statement = $this->pdo->prepare("CALL regusuarioEmpresa (?,?,?,?,?,?,?,?,?)");
+			$statement = $this->pdo->prepare("CALL regEmpresa (?,?,?,?,?,?,?,?,?)");
 			$statement->bindParam(1,$user_empresa->__GET('correoEmpresa'));
 			$statement->bindParam(2,$user_empresa->__GET('contraseñaEmpresa'));
 			$statement->bindParam(3,$user_empresa->__GET('nombreEmpresa'));

@@ -74,6 +74,7 @@ DELIMITER ;
 
 
 /*REGISTRO DE USUARIO DE EMPRESA*/
+/*ESTE PROCEDIMIENTO PRESENTA ERROR NO EJECUTAR*/
 DELIMITER $$
 CREATE PROCEDURE regusuarioEmpresa
 (
@@ -147,6 +148,74 @@ BEGIN
 		END IF;
 	ELSE
 		SELECT 'VALOR NO INGRESADO';
+	END IF;
+END $$
+DELIMITER ;
+
+
+
+
+/*REGISTRO DE USUARIO DE LA EMPRESA*/
+DELIMITER $$
+CREATE PROCEDURE regusuarioEmpresa
+(
+	_obtidEmpresa CHAR(5),
+	_idEmpresa CHAR(5),
+	_correoEmpresa VARCHAR(20),
+	_contraseñaEmpresa VARCHAR(20)
+)
+BEGIN
+
+	DECLARE _idusuarioEmpresa CHAR(5);
+
+	SET _idusuarioEmpresa = (SELECT (CONCAT('U',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM usuarioEmpresa); -- GENERAR CODIGO DEL USUARIO DE LA EMPRESA
+
+
+	IF _idusuarioEmpresa != '' THEN
+		INSERT INTO usuarioEmpresa (idusuarioEmpresa,idEmpresa,empresaCorreo,contraseñaEmpresa)
+		VALUES (_idusuarioEmpresa,_idEmpresa,_correoEmpresa,_contraseñaEmpresa);
+	END IF;
+
+END $$
+DELIMITER ;
+
+
+/*REGISTRO DE LA EMPRESA*/
+DELIMITER $$
+CREATE PROCEDURE regEmpresa
+(
+	_correoEmpresa VARCHAR(20),
+	_contraseñaEmpresa VARCHAR(20),
+	_nombreEmpresa VARCHAR(20),
+	_razonSocial VARCHAR(20),
+	_ruc CHAR(11),
+	_dirrecion VARCHAR(30),
+	_descripcion TEXT,
+	_celular CHAR(9),
+	_fijo CHAR(9)
+)
+BEGIN
+	DECLARE _idEmpresa CHAR(5);
+	DECLARE _idusuarioEmpresa CHAR(5);
+	DECLARE _obtidEmpresa CHAR(5); -- OBTENEMOS EL ID DE LA EMPRESA
+	DECLARE _evaluarRuc CHAR(11); -- EVALUAR SI LA EMPRESA EXISTE O NO
+
+	SET _idEmpresa = (SELECT (CONCAT('E',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM Empresa); -- GENERAR CODIGO DE LA EMPRESA
+	SET _idusuarioEmpresa = (SELECT (CONCAT('U',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM usuarioEmpresa); -- GENERAR CODIGO DEL USUARIO DE LA EMPRESA
+	SET _obtidEmpresa = (SELECT DISTINCT idEmpresa FROM Empresa WHERE ruc = _ruc); -- OBTENEMOS EL ID DE LA EMPRESA MEDIANTE EL RUC
+	SET _evaluarRuc = (SELECT DISTINCT ruc FROM Empresa WHERE ruc = _ruc); -- OBTENEMOS EL RUC PARA VERIFICAR SI LA EMPRESA YA SE ENCUENTRA REGISTRADA
+
+	IF _evaluarRuc = _ruc THEN
+		SELECT 'LA EMPRESA SE ENCUENTRA REGISTRADA';
+	ELSE
+		IF _idEmpresa <> '' THEN
+
+			INSERT INTO Empresa (idEmpresa,nombreEmpresa,razonSocial,ruc,correoEmpresa,dirrecion,descripcion,celular,fijo)
+			VALUES (_idEmpresa,_nombreEmpresa,_razonSocial,_ruc,_correoEmpresa,_dirrecion,_descripcion,_celular,_fijo);
+			
+			CALL regusuarioEmpresa (_obtidEmpresa,_idEmpresa,_correoEmpresa,_contraseñaEmpresa);
+			
+		END IF;
 	END IF;
 END $$
 DELIMITER ;
