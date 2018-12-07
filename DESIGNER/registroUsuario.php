@@ -36,6 +36,7 @@ if (isset($_POST['guardar-2']))
   $pers->__SET('descripcion',       $_POST['descripcion']);
   $pers->__SET('celular',           $_POST['celular']);
   $pers->__SET('fijo',              $_POST['fijo']);
+  $pers->__SET('tipo',              $_POST['tipo']);
 
   $perDAO->Reg_Empresa_User($pers);
   header('Location: index.php');
@@ -103,6 +104,7 @@ if (isset($_POST['guardar-2']))
               <textarea name="descripcion" rows="8" cols="80" placeholder="Ingrese una Pequeña descripcion de su Empresa" maxlength="30"></textarea>
               <input class="numeros" type="text" name="celular" value="" placeholder="9XX - XXX - XXX" title="Ingrese un Numero de Celular obmitir los espacios y el '-'" maxlength="9">
               <input class="numeros" type="text" name="fijo" value="" placeholder="056 - XXXXXX" title="Ingrese un Numero de Fijo obmitir los espacios y el '-'" maxlength="9">
+              <input type="hidden" name="tipo" value="Empresa">
               <input type="submit" value="REGISTRAR" name="guardar-2">
             </form>
           </div>

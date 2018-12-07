@@ -52,21 +52,6 @@ CREATE TABLE Persona (
  CONSTRAINT chek_sexo CHECK (sexo IN ('F','M'))
 );
 
-/*TABLA DE REGISTRO DE USUARIO DE EMPRESA*/
-CREATE TABLE usuarioPersona (
- idUsuario CHAR(5) NOT NULL, -- SE TIENE QUE AUTOGENERAR
- idPersona CHAR(5) NOT NULL, -- HACE REFERENCIA TABLA PERSONA
- usuarioCorreo VARCHAR(20) NOT NULL, -- TIENE QUE SER IGUAL QUE EL CORREO REGISTRADO COMO PERSONA
- contraseña VARCHAR(20) NOT NULL,  -- CONTRASEÑA
- 
- CONSTRAINT pk_idUsuario PRIMARY KEY (idUsuario),
- CONSTRAINT fk_idPersona FOREIGN KEY (idPersona) REFERENCES Persona (idPersona),
- CONSTRAINT uni_usuarioCorreo UNIQUE (usuarioCorreo)
-);
-
-
-
-
 /*REGISTRO COMO EMPRESA*/
 CREATE TABLE Empresa (
  idEmpresa CHAR(5) NOT NULL, -- SE TIENE QUE AUTOGENERAR
@@ -88,17 +73,20 @@ CREATE TABLE Empresa (
  CONSTRAINT chek_fijo CHECK (fijo LIKE ('0-9','0-9','0-9','0-9','0-9','0-9','0-9','0-9','0-9'))
 );
 
-/*REGISTRO USUARIO DE LA EMPRESA*/
-CREATE TABLE usuarioEmpresa (
- idusuarioEmpresa CHAR(5) NOT NULL, -- SE TIENE QUE AUTOGENERAR
- idEmpresa CHAR(5) NOT NULL, -- HACE REFERENCIA A LA EMPRESA REGISTRADA
- empresaCorreo VARCHAR(20) NOT NULL, -- USUARIO
- contraseñaEmpresa VARCHAR(20) NOT NULL, -- CONTRASEÑA
+
+/*TABLA DE REGISTRO DE USUARIO*/
+CREATE TABLE usuario (
+ idUsuario CHAR(5) NOT NULL, -- SE TIENE QUE AUTOGENERAR
+ idObtenido CHAR(5) NOT NULL, -- HACE REFERENCIA TABLA PERSONA
+ usuarioCorreo VARCHAR(20) NOT NULL, -- TIENE QUE SER IGUAL QUE EL CORREO REGISTRADO COMO PERSONA
+ contraseña VARCHAR(20) NOT NULL,  -- CONTRASEÑA
+ tipo VARCHAR(20) NOT NULL,
  
- CONSTRAINT pk_idusuarioEmpresa PRIMARY KEY (idusuarioEmpresa),
- CONSTRAINT fk_idEmpresa FOREIGN KEY (idEmpresa) REFERENCES Empresa (idEmpresa),
- CONSTRAINT uni_empresaCorreo UNIQUE (empresaCorreo)
+ CONSTRAINT pk_idUsuario PRIMARY KEY (idUsuario),
+ CONSTRAINT uni_usuarioCorreo UNIQUE (usuarioCorreo),
+ CONSTRAINT chek_tipo CHECK (tipo IN ('Admin','Empresa','Usuario'))
 );
+
 
 /*REGISTRAR SERVICIOS*/
 CREATE TABLE servicioEmpresa (
