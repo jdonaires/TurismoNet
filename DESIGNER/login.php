@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="contenedor-fondo-login">
-      <div class="contenedor-fomulario">
+      <div class="contenedor-fomulario-1">
         <form class="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
           <h4>INICIAR SESIÓN</h4>
           <!-- <a href="#">Registrarse</a> -->

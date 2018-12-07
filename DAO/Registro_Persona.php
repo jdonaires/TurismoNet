@@ -35,15 +35,15 @@ class PersonaDao
 	}
 
 	// FUNCION PARA REGISTRAR A LA EMPRESA COMO USUARIO
-	public function Reg_Empresa_User(Empresa $user_empresa)
+	public function Reg_Empresa_User(User_Empresa $user_empresa)
 	{
 		try
 		{
 			$statement = $this->pdo->prepare("CALL regusuarioEmpresa (?,?,?,?,?,?,?,?,?)");
 			$statement->bindParam(1,$user_empresa->__GET('correoEmpresa'));
-			$statement->bindParam(2,$user_empresa->__GET('$contraseñaEmpresa'));
-			$statement->bindParam(3,$user_empresa->__GET('$nombreEmpresa'));
-			$statement->bindParam(4,$user_empresa->__GET('$razonSocial'));
+			$statement->bindParam(2,$user_empresa->__GET('contraseñaEmpresa'));
+			$statement->bindParam(3,$user_empresa->__GET('nombreEmpresa'));
+			$statement->bindParam(4,$user_empresa->__GET('razonSocial'));
 			$statement->bindParam(5,$user_empresa->__GET('ruc'));
 			$statement->bindParam(6,$user_empresa->__GET('dirrecion'));
 			$statement->bindParam(7,$user_empresa->__GET('descripcion'));

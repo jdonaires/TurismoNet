@@ -1,12 +1,14 @@
 <?php
 require_once('../BOL/Persona.php');
+require_once('../BOL/Empresa.php');
 require_once('../DAO/Registro_Persona.php');
 
 $per = new Persona();
+$pers = new User_Empresa();
 $perDAO = new PersonaDao();
 
 // REGISTRO DE USUARIO
-if (isset($_POST['guardar']))
+if (isset($_POST['guardar-1']))
 {
   $per->__SET('correo',     $_POST['correo']);
   $per->__SET('contraseña', $_POST['contraseña']);
@@ -23,6 +25,21 @@ if (isset($_POST['guardar']))
 
 
 // REGISTRO DE USUARIO COMO EMPRESA
+if (isset($_POST['guardar-2']))
+{
+  $pers->__SET('correoEmpresa',     $_POST['correoEmpresa']);
+  $pers->__SET('contraseñaEmpresa', $_POST['contraseñaEmpresa']);
+  $pers->__SET('nombreEmpresa',     $_POST['nombreEmpresa']);
+  $pers->__SET('razonSocial',       $_POST['razonSocial']);
+  $pers->__SET('ruc',               $_POST['ruc']);
+  $pers->__SET('dirrecion',         $_POST['dirrecion']);
+  $pers->__SET('descripcion',       $_POST['descripcion']);
+  $pers->__SET('celular',           $_POST['celular']);
+  $pers->__SET('fijo',              $_POST['fijo']);
+
+  $perDAO->Reg_Empresa_User($pers);
+  header('Location: registroUsuario.php');
+}
  ?>
 
 <!DOCTYPE html>
@@ -60,14 +77,34 @@ if (isset($_POST['guardar']))
                 <option value="M" <?php if($per=="M"){echo "Selected";}?> >Masculino</option>
                 <option value="F" <?php if($per=="F"){echo "Selected";}?> >Femenino</option>
               </select>
-              <input type="submit" value="REGISTRAR" name="guardar">
+              <input type="submit" value="REGISTRAR" name="guardar-1">
             </form>
           </div>
 
   			</article>
   			<article id="tab2">
-  				<h1>Nosotros</h1>
-  				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel voluptates unde, consequuntur aliquid architecto rem numquam expedita minima dolorem pariatur recusandae, eius quod quia aspernatur id impedit, tenetur! Aspernatur incidunt molestiae dolores animi ea praesentium ipsam tenetur voluptas cupiditate perspiciatis eum nihil, natus exercitationem libero earum fuga dignissimos impedit numquam, quasi, placeat officiis voluptates, ad reprehenderit fugiat? Fugiat aperiam et magni, molestiae, numquam consectetur vitae sapiente cupiditate totam laboriosam voluptate obcaecati, aliquam placeat? Suscipit dolores fuga laudantium sed, qui magni iusto dolore quia. Quis fugit exercitationem porro. Rerum nihil omnis recusandae ratione fuga alias eligendi, earum sunt veritatis praesentium eum perspiciatis. Molestias deserunt, iure neque animi quod! Impedit reprehenderit cumque, numquam velit quae cum eius quidem similique laudantium hic deleniti!</p>
+  				<h1>REGISTRO</h1>
+          <div class="contenedor-empresa">
+            <form class="form-empresa" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+              <h4>Ingrese un Correo / Usuario</h4>
+              <input type="text" name="correoEmpresa" value="" placeholder="Ejemplo: turismonet@gmail.com" required maxlength="20">
+              <h4>Ingrese una Contrasseña / Password</h4>
+              <input type="password" name="contraseñaEmpresa" value="" placeholder="Ingrese una contrasseña" required maxlength="20">
+              <h4 class="datos-personales">Datos de la Empresa</h4>
+              <input type="text" name="nombreEmpresa" value="" placeholder="Ingrese: Nombre de la Empresa" required maxlength="20">
+              <select class="select-social" name="razonSocial">
+                <option value="S.A."  <?php if($per=="S.A."){echo "Selected";}?> >Sociedad Ananima</option>
+                <option value="S.A.C."  <?php if($per=="S.A.C."){echo "Selected";}?> >Sociedad Ananima Cerrada</option>
+                <option value="S.A.A." <?php if($per=="S.A.A."){echo "Selected";}?> >Sociedad Ananima Abierta</option>
+              </select>
+              <input  class="numeros" type="text" name="ruc" value="" placeholder="Ingrese su RUC" maxlength="11" required>
+              <input type="text" name="dirrecion" value="" placeholder="Ingrese su Ubicación" required>
+              <textarea name="descripcion" rows="8" cols="80" placeholder="Ingrese una Pequeña descripcion de su Empresa" maxlength="30"></textarea>
+              <input class="numeros" type="text" name="celular" value="" placeholder="9XX - XXX - XXX" title="Ingrese un Numero de Celular obmitir los espacios y el '-'" maxlength="9">
+              <input class="numeros" type="text" name="fijo" value="" placeholder="056 - XXXXXX" title="Ingrese un Numero de Fijo obmitir los espacios y el '-'" maxlength="9">
+              <input type="submit" value="REGISTRAR" name="guardar-2">
+            </form>
+          </div>
   			</article>
   		</div>
   	</div>
