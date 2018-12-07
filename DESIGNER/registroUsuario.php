@@ -20,7 +20,7 @@ if (isset($_POST['guardar-1']))
   $per->__SET('sexo',       $_POST['sexo']);
 
   $perDAO->Registrar_Persona($per);
-	header('Location: registroUsuario.php');
+	header('Location: index.php');
 }
 
 
@@ -38,7 +38,7 @@ if (isset($_POST['guardar-2']))
   $pers->__SET('fijo',              $_POST['fijo']);
 
   $perDAO->Reg_Empresa_User($pers);
-  header('Location: registroUsuario.php');
+  header('Location: index.php');
 }
  ?>
 
@@ -50,6 +50,7 @@ if (isset($_POST['guardar-2']))
     <link rel="stylesheet" href="CSS/registroUsuario.css">
   </head>
   <body>
+
 
     <!--SECCION DE TABS-->
     <div class="wrap">
