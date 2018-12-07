@@ -116,7 +116,7 @@
 .contenedor-lugares {
   position: relative;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   width: 80%;
   border: none;
   border-radius: 10px;
@@ -175,7 +175,7 @@
 }
 
 .contenedor-lugares .sub-contenedor .contenedor-2 input[type="button"] {
-  background: rgba(46, 204, 113, 1);
+  background: rgba(34, 153, 84, 1);
   color: #fff;
   font-family: Arial;
   font-size: 15px;
@@ -189,5 +189,6 @@
 }
 
 .contenedor-lugares .sub-contenedor .contenedor-2 input[type="button"]:hover {
-  background: rgba(241, 196, 15, 1);
+  background: rgba(243, 156, 18, 1);
+  border-bottom: 3px solid rgba(186, 74, 0, 0.8);
 }
