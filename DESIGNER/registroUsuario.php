@@ -86,22 +86,22 @@ if (isset($_POST['guardar-2']))
   			</article>
   			<article id="tab2">
   				<h1>REGISTRO</h1>
-          <div class="contenedor-empresa">
-            <form class="form-empresa" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+          <div class="contenedor-usuario">
+            <form class="form-usuario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
               <h4>Ingrese un Correo / Usuario</h4>
               <input type="text" name="correoEmpresa" value="" placeholder="Ejemplo: turismonet@gmail.com" required maxlength="20">
               <h4>Ingrese una Contrasseña / Password</h4>
               <input type="password" name="contraseñaEmpresa" value="" placeholder="Ingrese una contrasseña" required maxlength="20">
               <h4 class="datos-personales">Datos de la Empresa</h4>
               <input type="text" name="nombreEmpresa" value="" placeholder="Ingrese: Nombre de la Empresa" required maxlength="20">
-              <select class="select-social" name="razonSocial">
+              <select class="select-razon" name="razonSocial">
                 <option value="S.A."  <?php if($per=="S.A."){echo "Selected";}?> >Sociedad Ananima</option>
                 <option value="S.A.C."  <?php if($per=="S.A.C."){echo "Selected";}?> >Sociedad Ananima Cerrada</option>
                 <option value="S.A.A." <?php if($per=="S.A.A."){echo "Selected";}?> >Sociedad Ananima Abierta</option>
               </select>
               <input  class="numeros" type="text" name="ruc" value="" placeholder="Ingrese su RUC" maxlength="11" required>
-              <input type="text" name="dirrecion" value="" placeholder="Ingrese su Ubicación" required>
-              <textarea name="descripcion" rows="8" cols="80" placeholder="Ingrese una Pequeña descripcion de su Empresa" maxlength="30"></textarea>
+              <input type="text" name="dirrecion" value="" placeholder="Ingrese su Ubicación" maxlength="30" required>
+              <textarea name="descripcion" rows="8" cols="80" placeholder="Ingrese una Pequeña descripcion de su Empresa"></textarea>
               <input class="numeros" type="text" name="celular" value="" placeholder="9XX - XXX - XXX" title="Ingrese un Numero de Celular obmitir los espacios y el '-'" maxlength="9">
               <input class="numeros" type="text" name="fijo" value="" placeholder="056 - XXXXXX" title="Ingrese un Numero de Fijo obmitir los espacios y el '-'" maxlength="9">
               <input type="hidden" name="tipo" value="Empresa">

@@ -5,7 +5,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-
+/*
 .contenedor-menu {
   /* position: absolute; */
   background: rgba(0,0,0, .9);
@@ -13,18 +13,18 @@ body {
   height: 40px;
 }
 
-.contenedor-menu .contenedor-opciones {
+/* .contenedor-menu .contenedor-opciones {
   display: inline-block;
   margin-left: 50px;
-}
+} */
 
-.contenedor-menu .contenedor-opciones li {
+/* .contenedor-menu .contenedor-opciones li {
   display: inline-block;
   text-decoration: none;
   padding: 5px 0px;
-}
+} */
 
-.contenedor-menu .contenedor-opciones li a {
+/* .contenedor-menu .contenedor-opciones li a {
   display: inline-block;
   padding: 5px 5px;
   width: 100px;
@@ -36,11 +36,11 @@ body {
   font-size: 15px;
   font-family: Arial;
   transition: all .5s ease;
-}
+} */
 
-.contenedor-menu .contenedor-opciones li a:hover {
+/* .contenedor-menu .contenedor-opciones li a:hover {
   border-bottom: 2px solid #fff;
-}
+} */ */
 
 
 /*ESTILOS PARA LOS TABS*/
@@ -146,7 +146,8 @@ ul.tabs li a .tab-text{
 
 .wrap .secciones article .contenedor-usuario .form-usuario input[type="text"],
 .wrap .secciones article .contenedor-usuario .form-usuario input[type="password"],
-.wrap .secciones article .contenedor-usuario .form-usuario .select-sexo {
+.wrap .secciones article .contenedor-usuario .form-usuario .select-sexo,
+.wrap .secciones article .contenedor-usuario .form-usuario .select-razon {
   text-align: center;
   font-size: 12px;
   width: 100%;
@@ -156,7 +157,17 @@ ul.tabs li a .tab-text{
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
+.wrap .secciones article .contenedor-usuario .form-usuario textarea {
+  text-align: justify;
+  font-size: 12px;
+  width: 100%;
+  height: 100px;
+  border: 1px solid rgba(0,0,0,.4);
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px 10px;
+}
 .wrap .secciones article .contenedor-usuario .form-usuario input[type="submit"] {
   text-align: center;
   font-size: 15px;
