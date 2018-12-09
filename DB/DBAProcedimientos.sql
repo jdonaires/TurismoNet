@@ -173,3 +173,13 @@ BEGIN
 	END IF;
 END$$
 DELIMITER ;
+
+
+DELIMITER $$
+CREATE PROCEDURE lisProvinciaUbicacion 
+(
+)
+BEGIN
+	SELECT Provincia FROM ProvinciaUbicacion;
+END $$
+DELIMITER ;

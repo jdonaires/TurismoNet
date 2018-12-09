@@ -28,8 +28,28 @@ class ProvinciaDao
 		}
 	}
 
-	// FUNCION PARA REGISTRAR A LA EMPRESA COMO USUARIO
+	// FUNCION PARA LISTAR LAS PROVINCIAS REGISTRADAS
+	public function ListUbicacion()
+	{
+		try {
+			$result = array();
 
+			$statement = $this->pdo->prepare("call lisProvinciaUbicacion");
+			$statement->execute();
+
+			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$lisUbicacion = new Turistico();
+
+				$lisUbicacion->__SET('Provincia',	$r->Provincia);
+
+				$result[] = $lisUbicacion;
+			}
+			return $result;
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
 
 }
 

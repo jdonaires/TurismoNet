@@ -1,20 +1,31 @@
 <?php
 require_once('../BOL/Turistico.php');
 require_once('../DAO/Lugar_turistico.php');
+require_once('../DAO/Registro_Provincia.php');
+
 
 $per = new turistico();
 $perDAO = new TuristicoDAO();
 
 if(isset($_POST['guardar']))
 {
+	// CARGAR Y CONVERTIR LA IMAGEN A BINARIO
+	$cargarImagen = $_FILES['imgLugar']['tmp_name'];
+	$ConvertirImg = fopen($cargarImagen, 'rb');
+
 	$per->__SET('titulo',          $_POST['titulo']);
 	$per->__SET('descripcion',        $_POST['descripcion']);
-	$per->__SET('imgLugar',               $_FILES['imgLugar']['name']);
+	$per->__SET('imgLugar',        $ConvertirImg);
   $per->__SET('Provincia',             $_POST['Provincia']);
 	$per->__SET('fecha',                    $_POST['fecha']);
 	$perDAO->Registrar_Turistico($per);
 	header('Location: frm_turistico.php');
 }
+
+
+$lista = new ProvinciaDao();
+$resl = array();
+$resl = $lista->ListUbicacion();
 
 ?>
 <!DOCTYPE html>
@@ -46,7 +57,14 @@ if(isset($_POST['guardar']))
                         </tr>
                         <tr>
                             <th style="text-align:left;">Ubicacion</th>
-                            <td><input type="text" name="Provincia" value="" style="width:100%;" /></td>
+                            <td>
+															<select class="" name="Provincia" style="width:100%;">
+																<?php foreach ($resl as $value) { ?>
+																	<option value="<?php echo $value->__GET('Provincia'); ?>"<?php echo "Selected"; ?>><?php echo $value->__GET('Provincia'); ?></option>
+																	<?php
+																} ?>
+															</select>
+														</td>
                         </tr>
                         <tr>
                             <th style="text-align:left;">Fecha</th>

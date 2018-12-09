@@ -26,10 +26,10 @@
         <div class="sub-contenedor">
           <div class="contenedor-1">
             <h3><?php echo $value->__GET('titulo'); ?></h3>
-            <img src="<?php echo $value->__GET('imgLugar'); ?>">
+            <img src="data:image/jpg;base64, <?php echo base64_encode($value->__GET('imgLugar'))?>">
           </div>
           <div class="contenedor-2">
-            <h4><?php echo $value->__GET('descripcion'); ?></h4>
+            <p class="parrafo"><?php echo $value->__GET('descripcion'); ?></p>
             <input type="button" name="" value="Mostrar mas">
           </div>
         </div>

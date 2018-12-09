@@ -19,7 +19,7 @@ class TuristicoDAO
 			$statement = $this->pdo->prepare("CALL regLugarTuristico(?,?,?,?,?)");
     	$statement->bindParam(1,$persona->__GET('titulo'));
 			$statement->bindParam(2,$persona->__GET('descripcion'));
-			$statement->bindParam(3,$persona->__GET('imgLugar'));
+			$statement->bindParam(3,$persona->__GET('imgLugar'),PDO::PARAM_LOB);
   		$statement->bindParam(4,$persona->__GET('Provincia'));
 			$statement->bindParam(5,$persona->__GET('fecha'));
     	$statement -> execute();
