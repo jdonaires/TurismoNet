@@ -185,3 +185,42 @@ ul.tabs li a .tab-text{
   background: rgba(241, 196, 15, 0.9);
   border-bottom: 3px solid rgba(214, 137, 16, 0.5);
 }
+
+
+/*DISEÑO PARA EL BTN AGREGAR IMAGEN */
+.wrap .secciones article .contenedor-usuario .form-usuario .sub-contenedor-img .div-file {
+  position: relative;
+  color: #fff;
+  background: rgba(4, 86, 239,1);
+  40, 116, 166
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  font-family: Arial;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: all .5s ease;
+}
+.wrap .secciones article .contenedor-usuario .form-usuario .sub-contenedor-img .div-file p {
+  padding: 10px;
+  text-align: center;
+}
+
+.wrap .secciones article .contenedor-usuario .form-usuario .sub-contenedor-img .div-file input[type="file"] {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.wrap .secciones article .contenedor-usuario .form-usuario .sub-contenedor-img .div-file input[type="file"]:hover,
+.wrap .secciones article .contenedor-usuario .form-usuario .sub-contenedor-img .div-file:hover {
+    background: rgba(5, 65, 178,1);
+    border-bottom: 4px solid rgba(16, 57, 121,1);
+}

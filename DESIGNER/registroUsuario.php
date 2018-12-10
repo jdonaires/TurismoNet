@@ -110,7 +110,15 @@ if (isset($_POST['guardar-2']))
               <input class="numeros" type="text" name="celular" value="" placeholder="9XX - XXX - XXX" title="Ingrese un Numero de Celular obmitir los espacios y el '-'" maxlength="9">
               <input class="numeros" type="text" name="fijo" value="" placeholder="056 - XXXXXX" title="Ingrese un Numero de Fijo obmitir los espacios y el '-'" maxlength="9">
               <input type="hidden" name="tipo" value="Empresa">
-              <input type="file" name="EmpresaImage" value="" accept="image/jpeg">
+
+              <div class="sub-contenedor-img">
+                <div class="div-file">
+                  <p>Cargar Imagen</p>
+                  <input id="file-input" name="EmpresaImage" type="file" value="" accept="image/jpg">
+                </div>
+              </div>
+              <!-- <input id="file-input" name="EmpresaImage" type="file" value="" accept="image/jpg"> -->
+              <!-- <img id="imgSalida" width="50%" height="50%" src=""/> -->
               <input type="submit" value="REGISTRAR" name="guardar-2">
             </form>
           </div>
