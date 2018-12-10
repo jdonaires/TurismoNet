@@ -146,7 +146,8 @@ CREATE PROCEDURE regEmpresa
 	_dirrecion VARCHAR(30),
 	_descripcion TEXT,
 	_celular CHAR(9),
-	_fijo CHAR(9)
+	_fijo CHAR(9),
+	_empreImg MEDIUMBLOB
 )
 BEGIN
 	DECLARE _idEmpresa CHAR(5);
@@ -164,8 +165,8 @@ BEGIN
 	ELSE
 		IF _idEmpresa <> '' THEN
 
-			INSERT INTO Empresa (idEmpresa,nombreEmpresa,razonSocial,ruc,correoEmpresa,dirrecion,descripcion,celular,fijo)
-			VALUES (_idEmpresa,_nombreEmpresa,_razonSocial,_ruc,_correoEmpresa,_dirrecion,_descripcion,_celular,_fijo);
+			INSERT INTO Empresa (idEmpresa,nombreEmpresa,razonSocial,ruc,correoEmpresa,dirrecion,descripcion,celular,fijo,EmpresaImage)
+			VALUES (_idEmpresa,_nombreEmpresa,_razonSocial,_ruc,_correoEmpresa,_dirrecion,_descripcion,_celular,_fijo,_empreImg);
 			
 			CALL regusuarioEmpresa (_obtidEmpresa,_idEmpresa,_correoEmpresa,_contraseñaEmpresa,_tipo);
 			

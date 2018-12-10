@@ -13,6 +13,7 @@ class User_Empresa
   private $descripcion;
   private $celular;
   private $fijo;
+  private $EmpresaImage;
 
   public function __GET($x)
   {

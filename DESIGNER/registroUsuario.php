@@ -27,6 +27,10 @@ if (isset($_POST['guardar-1']))
 // REGISTRO DE USUARIO COMO EMPRESA
 if (isset($_POST['guardar-2']))
 {
+  // CARGAR Y CONVERTIR LA IMAGEN A BINARIO
+  $cargarImagen = $_FILES['EmpresaImage']['tmp_name'];
+  $ConvertirImg = fopen($cargarImagen, 'rb');
+
   $pers->__SET('correoEmpresa',     $_POST['correoEmpresa']);
   $pers->__SET('contraseñaEmpresa', $_POST['contraseñaEmpresa']);
   $pers->__SET('nombreEmpresa',     $_POST['nombreEmpresa']);
@@ -37,6 +41,7 @@ if (isset($_POST['guardar-2']))
   $pers->__SET('celular',           $_POST['celular']);
   $pers->__SET('fijo',              $_POST['fijo']);
   $pers->__SET('tipo',              $_POST['tipo']);
+  $pers->__SET('EmpresaImage',      $ConvertirImg);
 
   $perDAO->Reg_Empresa_User($pers);
   header('Location: index.php');
@@ -87,7 +92,7 @@ if (isset($_POST['guardar-2']))
   			<article id="tab2">
   				<h1>REGISTRO</h1>
           <div class="contenedor-usuario">
-            <form class="form-usuario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+            <form class="form-usuario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" enctype="multipart/form-data">
               <h4>Ingrese un Correo / Usuario</h4>
               <input type="text" name="correoEmpresa" value="" placeholder="Ejemplo: turismonet@gmail.com" required maxlength="20">
               <h4>Ingrese una Contrasseña / Password</h4>
@@ -105,6 +110,7 @@ if (isset($_POST['guardar-2']))
               <input class="numeros" type="text" name="celular" value="" placeholder="9XX - XXX - XXX" title="Ingrese un Numero de Celular obmitir los espacios y el '-'" maxlength="9">
               <input class="numeros" type="text" name="fijo" value="" placeholder="056 - XXXXXX" title="Ingrese un Numero de Fijo obmitir los espacios y el '-'" maxlength="9">
               <input type="hidden" name="tipo" value="Empresa">
+              <input type="file" name="EmpresaImage" value="" accept="image/jpeg">
               <input type="submit" value="REGISTRAR" name="guardar-2">
             </form>
           </div>
