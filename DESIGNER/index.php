@@ -11,7 +11,7 @@
       <div class="contenedor-opciones">
         <li><a href="#" id="index">Inicio</a></li>
         <li><a href="#">Servicios</a></li>
-        <li><a href="#">Empresas</a></li>
+        <li><a href="#" id="lisempresas">Empresas</a></li>
         <li><a href="#" id="login">Ingresar</a></li>
         <li><a href="#" id="regUsuario">Registrarse</a></li>
       </div>

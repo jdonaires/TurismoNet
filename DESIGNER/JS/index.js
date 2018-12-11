@@ -8,7 +8,7 @@ $(document).ready(function() {
   $('#regUsuario').click(function() {
     $('#contenido').load("registroUsuario.php");
   });
-  $('#Venta').click(function() {
-    $('#contenido').load("reg_venta.php");
+  $('#lisempresas').click(function() {
+    $('#contenido').load("lis_Empresas.php");
   });
 });

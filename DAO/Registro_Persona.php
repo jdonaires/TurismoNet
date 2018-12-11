@@ -69,6 +69,7 @@ class PersonaDao
 			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
 			{
 				$lisEmpresa = new User_Empresa();
+				
 				$lisEmpresa->__SET('EmpresaImage', 	$r->EmpresaImage);
 				$lisEmpresa->__SET('nombreEmpresa', $r->nombreEmpresa);
 				$lisEmpresa->__SET('razonSocial', 	$r->razonSocial);

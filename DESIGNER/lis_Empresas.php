@@ -6,10 +6,10 @@
   </head>
   <body>
     <?php
-    require_once("../DAO/Registrar_Persona.php");
-    $list = new User_Empresa();
+    require_once("../DAO/Registro_Persona.php");
+    $lit = new PersonaDao();
     $relt = array();
-    $relt = $list->list_Empresas();
+    $relt = $lit->list_Empresas();
      ?>
     <div class="contenedor-empresas">
       <?php
@@ -23,7 +23,7 @@
           <h4>Calificación: <span></span></h4> <!--CALIFICACION-->
           <h5>Ruc: <?php echo $value->__GET('ruc'); ?></h5> <!--NUMERO DE RUC-->
           <h5>Telefonos: <span><?php echo $value->__GET('celular'); ?></span> / <span><?php echo $value->__GET('fijo'); ?></span></h5>
-          <p>Ubicacion: <?php echo $value->__GET(dirrecion); ?></p> <!--DIREECION-->
+          <p>Ubicacion: <?php echo $value->__GET('dirrecion'); ?></p> <!--DIREECION-->
           <h5>Descripcion</h5>
           <p><?php echo $value->__GET('descripcion');; ?></p> <!--DESCRIPCION-->
         </div>
