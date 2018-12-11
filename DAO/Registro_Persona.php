@@ -59,6 +59,34 @@ class PersonaDao
 
 	}
 
+	public function list_Empresas()
+	{
+		try
+		{
+			$result = array();
+			$statement = $this->pdo->prepare("CALL lisEmpresas");
+			$statement->execute();
+			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$lisEmpresa = new User_Empresa();
+				$lisEmpresa->__SET('EmpresaImage', 	$r->EmpresaImage);
+				$lisEmpresa->__SET('nombreEmpresa', $r->nombreEmpresa);
+				$lisEmpresa->__SET('razonSocial', 	$r->razonSocial);
+				$lisEmpresa->__SET('ruc', 					$r->ruc);
+				$lisEmpresa->__SET('celular', 			$r->celular);
+				$lisEmpresa->__SET('fijo', 					$r->fijo);
+				$lisEmpresa->__SET('dirrecion', 		$r->dirrecion);
+				$lisEmpresa->__SET('descripcion', 	$r->descripcion);
+
+				$result[] = $lisEmpresa;
+			}
+			return $result;
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
+	}
+
 }
 
 ?>

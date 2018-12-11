@@ -184,3 +184,13 @@ BEGIN
 	SELECT Provincia FROM ProvinciaUbicacion;
 END $$
 DELIMITER ;
+
+
+DELIMITER $$
+CREATE PROCEDURE lisEmpresas
+(
+)
+BEGIN
+	SELECT EmpresaImage, nombreEmpresa, razonSocial, ruc, celular, fijo, dirrecion, descripcion FROM Empresa;
+END $$
+DELIMITER ;
