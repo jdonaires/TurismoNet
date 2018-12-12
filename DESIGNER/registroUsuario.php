@@ -102,9 +102,9 @@ if (isset($_POST['guardar-2']))
               <h4 class="datos-personales">Datos de la Empresa</h4>
               <input type="text" name="nombreEmpresa" value="" placeholder="Ingrese: Nombre de la Empresa" required maxlength="20">
               <select class="select-razon" name="razonSocial">
-                <option value="S.A."  <?php if($per=="S.A."){echo "Selected";}?> >Sociedad Ananima</option>
-                <option value="S.A.C."  <?php if($per=="S.A.C."){echo "Selected";}?> >Sociedad Ananima Cerrada</option>
-                <option value="S.A.A." <?php if($per=="S.A.A."){echo "Selected";}?> >Sociedad Ananima Abierta</option>
+                <option value="S.A."  <?php if($per=="S.A."){echo "Selected";}?> >Sociedad Anonima</option>
+                <option value="S.A.C."  <?php if($per=="S.A.C."){echo "Selected";}?> >Sociedad Anonima Cerrada</option>
+                <option value="S.A.A." <?php if($per=="S.A.A."){echo "Selected";}?> >Sociedad Anonima Abierta</option>
               </select>
               <input  class="numeros" type="text" name="ruc" value="" placeholder="Ingrese su RUC" maxlength="11" required>
               <input type="text" name="dirrecion" value="" placeholder="Ingrese su Ubicación" maxlength="30" required>

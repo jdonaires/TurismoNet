@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  /* background: rgba(23, 32, 42, 1); */
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.cabecera {
+  background: rgba(25, 111, 61, 1);
+  width: 100%;
+  height: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.contenido-1 {
+  padding: 20px 20px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.contenido-1 .sub-contenido-1 {
+  background: rgba(0, 6, 66, 1);
+  width: 250px;
+  max-width: 90%;
+  border: none;
+  border-radius: 5px;
+}
+
+.contenido-1 .sub-contenido-1 nav ul li {
+  display: inline-block;
+  width: 100%;
+}
+
+.contenido-1 .sub-contenido-1 nav ul li a {
+  padding: 5px 5px;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  width: 100%;
+  height: 35px;
+  text-align: left;
+  font-family: Arial;
+  font-size: 15px;
+  color: #fff;
+  transition: all .5s ease;
+}
+
+.contenido-1 .sub-contenido-1 nav ul li .empleado:hover {
+  background: rgba(66, 73, 73, 1);
+  border-bottom: 1px solid #fff;
+  /* border-top: 1px solid #fff; */
+}
+
+.contenido-1 .sub-contenido-1 nav ul li .admin:hover {
+  background: rgba(66, 73, 73, 1);
+  /* border-bottom: 1px solid #fff; */
+  border-top: 1px solid #fff;
+}
+
+.contenido-1 .sub-contenido-1 nav ul li .empleado:hover {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.contenido-1 .sub-contenido-1 nav ul li .admin:hover {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.contenido-1 .sub-contenido-1 nav ul li ul {
+  display: none;
+}
+
+.contenido-1 .sub-contenido-1 nav ul li ul li a {
+  font-size: 15px;
+  padding: 5px 30px;
+  background: rgba(66, 73, 73, 1);
+  transition: all .5s ease;
+}
+
+.contenido-1 .sub-contenido-1 nav ul li ul li a:hover {
+  background: rgba(0, 6, 66, 1);
+}
+
+.contenido-1 .sub-contenido-1 nav ul .activado>a {
+  background: rgba(66, 73, 73, 1);
+}
+
+.contenido-1 .sub-contenido-1 .icono.derecha {
+  float: right;
+  font-size: 15px;
+  margin: auto;
+  margin-top: 5px;
+  margin-right: 20px;
+}
