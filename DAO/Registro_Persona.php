@@ -26,6 +26,7 @@ class PersonaDao
 	    $statement->bindParam(6,$persona->__GET('dni'));
 	    $statement->bindParam(7,$persona->__GET('celular'));
 	    $statement->bindParam(8,$persona->__GET('sexo'));
+			$statement->bindParam(9,$persona->__GET('tipo'));
 	    $statement -> execute();
 
 		} catch (Exception $e)
@@ -69,7 +70,7 @@ class PersonaDao
 			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
 			{
 				$lisEmpresa = new User_Empresa();
-				
+
 				$lisEmpresa->__SET('EmpresaImage', 	$r->EmpresaImage);
 				$lisEmpresa->__SET('nombreEmpresa', $r->nombreEmpresa);
 				$lisEmpresa->__SET('razonSocial', 	$r->razonSocial);

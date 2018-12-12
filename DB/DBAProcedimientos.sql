@@ -41,7 +41,8 @@ CREATE PROCEDURE regPersona
 	_apMaterno VARCHAR(20),
 	_dni CHAR(8), -- DNI UNICO POR PERSONA
 	_celular CHAR(9), -- SE NECESITA PARA REALIZAR CHARLA PERSONAL
-	_sexo CHAR(1)
+	_sexo CHAR(1),
+	_tipo VARCHAR(20)
 )
 BEGIN
 	DECLARE _idPersona CHAR(5);
@@ -60,12 +61,7 @@ BEGIN
 				INSERT INTO Persona (idPersona,nombres,apPaterno,apMaterno,dni,correo,celular,sexo)
 				VALUES (_idPersona,_nombres,_apPaterno,_apMaterno,_dni,_correo,_celular,_sexo);
 
-				IF _obtIdPersona != '' THEN
-					IF _idUsuario != '' THEN
-						INSERT INTO usuarioPersona (idUsuario,idPersona,usuarioCorreo,contraseña)
-						VALUES (_idUsuario,_idPersona,_correo,_contraseña);
-					END IF;
-				END IF;
+				CALL regusuarioEmpresa (_obtIdPersona,_idPersona,_correo,_contraseña,_tipo);
 			END IF;
 		END IF;
 
@@ -147,6 +143,7 @@ CREATE PROCEDURE regEmpresa
 	_descripcion TEXT,
 	_celular CHAR(9),
 	_fijo CHAR(9),
+	_tipo VARCHAR(20),
 	_empreImg MEDIUMBLOB
 )
 BEGIN

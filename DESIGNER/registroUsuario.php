@@ -18,6 +18,7 @@ if (isset($_POST['guardar-1']))
   $per->__SET('dni',        $_POST['dni']);
   $per->__SET('celular',    $_POST['celular']);
   $per->__SET('sexo',       $_POST['sexo']);
+  $per->__SET('tipo',       $_POST['tipo']);
 
   $perDAO->Registrar_Persona($per);
 	header('Location: index.php');
@@ -84,6 +85,7 @@ if (isset($_POST['guardar-2']))
                 <option value="M" <?php if($per=="M"){echo "Selected";}?> >Masculino</option>
                 <option value="F" <?php if($per=="F"){echo "Selected";}?> >Femenino</option>
               </select>
+              <input type="hidden" name="tipo" value="Usuario">
               <input type="submit" value="REGISTRAR" name="guardar-1">
             </form>
           </div>
