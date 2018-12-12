@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="CSS/lis_Empresas.css">
-    <link rel="stylesheet" href="CSS/starrr.css">
+    <link rel="stylesheet" href="CSS/estrellas.css">
   </head>
   <body>
     <?php
@@ -23,7 +23,8 @@
               </div>
               <div class="contenido-2">
                 <h3><?php echo $value->__GET('nombreEmpresa'); ?>  <span><?php echo $value->__GET('razonSocial'); ?></span></h3> <!--NOMBRE DE LA EMPRESA-->
-                <h4>Calificación: <span id="Estrellas"></span></h4> <!--CALIFICACION-->
+                <!-- <h4><fieldset class="stars-fieldset"><legend>Calificación:</legend><span class="stars stars-40"></span></fieldset></h4> CALIFICACION -->
+                <h4>Calificación: <span class="stars stars-40"></span></h4>
                 <h5>Ruc: <?php echo $value->__GET('ruc'); ?></h5> <!--NUMERO DE RUC-->
                 <h5>Telefonos: <span><?php echo $value->__GET('celular'); ?></span> / <span><?php echo $value->__GET('fijo'); ?></span></h5>
                 <p><b>Ubicacion: </b><?php echo $value->__GET('dirrecion'); ?></p> <!--DIREECION-->
@@ -48,8 +49,8 @@
      });
 
       </script> -->
-
+<!--
     <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="JS/starrr.js"></script>
+    <script type="text/javascript" src="JS/starrr.js"></script> -->
   </body>
 </html>
