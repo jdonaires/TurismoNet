@@ -110,3 +110,34 @@ body {
   margin-left: 30px;
   padding: 10px 10px;
 }
+
+.cabecera .cabecera-1 li {
+  display: inline-block;
+  text-decoration: none;
+  width: 120px;
+}
+
+.cabecera .cabecera-1 li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  padding: 10px 0px;
+  margin-top: 5px;
+  margin-left: 30px;
+  font-size: 15px;
+  font-family: Arial;
+  transition: all .5s ease;
+}
+
+.cabecera .cabecera-1 li a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.cabecera .cabecera-1 .icono.izquierda {
+  font-size: 15px;
+  margin: auto;
+  margin-right: 10px;
+}

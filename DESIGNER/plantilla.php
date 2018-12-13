@@ -10,7 +10,7 @@
   <body>
     <div class="cabecera">
       <div class="cabecera-1">
-
+        <li><a href="#"><span class="icono izquierda icon-home"></span>Inicio</a></li>
       </div>
       <div class="cabecera-2">
 
