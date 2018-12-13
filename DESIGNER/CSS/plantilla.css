@@ -14,7 +14,7 @@ body {
 }
 
 .cabecera {
-  background: rgba(25, 111, 61, 1);
+  background: rgba(22, 73, 107, 1);
   width: 100%;
   height: 50px;
   display: -webkit-flex;
@@ -35,8 +35,8 @@ body {
 }
 
 .contenido-1 .sub-contenido-1 {
-  background: rgba(0, 6, 66, 1);
-  width: 250px;
+  background: rgba(59, 66, 66, 1);
+  width: 340px;
   max-width: 90%;
   border: none;
   border-radius: 5px;
@@ -53,7 +53,8 @@ body {
   border: none;
   text-decoration: none;
   width: 100%;
-  height: 35px;
+  height: 36px;
+  border-bottom: 1px solid #fff;
   text-align: left;
   font-family: Arial;
   font-size: 15px;
@@ -61,25 +62,8 @@ body {
   transition: all .5s ease;
 }
 
-.contenido-1 .sub-contenido-1 nav ul li .empleado:hover {
+.contenido-1 .sub-contenido-1 nav ul li a:hover {
   background: rgba(66, 73, 73, 1);
-  border-bottom: 1px solid #fff;
-  /* border-top: 1px solid #fff; */
-}
-
-.contenido-1 .sub-contenido-1 nav ul li .admin:hover {
-  background: rgba(66, 73, 73, 1);
-  /* border-bottom: 1px solid #fff; */
-  border-top: 1px solid #fff;
-}
-
-.contenido-1 .sub-contenido-1 nav ul li .empleado:hover {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-.contenido-1 .sub-contenido-1 nav ul li .admin:hover {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 }
 
 .contenido-1 .sub-contenido-1 nav ul li ul {
@@ -88,7 +72,7 @@ body {
 
 .contenido-1 .sub-contenido-1 nav ul li ul li a {
   font-size: 15px;
-  padding: 5px 30px;
+  padding: 5px 50px;
   background: rgba(66, 73, 73, 1);
   transition: all .5s ease;
 }
@@ -101,10 +85,28 @@ body {
   background: rgba(66, 73, 73, 1);
 }
 
+.contenido-1 .sub-contenido-1 .icono.izquierda {
+  font-size: 18px;
+  margin: auto;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
 .contenido-1 .sub-contenido-1 .icono.derecha {
   float: right;
   font-size: 15px;
   margin: auto;
   margin-top: 5px;
   margin-right: 20px;
+}
+
+.contenido-1 .sub-contenido-2 {
+  display: inline-block;
+  background: rgba(216, 208, 208, .2);
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 570px;
+  margin-left: 30px;
+  padding: 10px 10px;
 }

@@ -22,7 +22,7 @@
           <header>
             <nav>
               <ul>
-                <li><a class="empleado" href="#">Empleado<span class="icono derecha icon-chevron-down"></span></a>
+                <li><a class="empleado" href="#"><span class="icono izquierda  icon-man"></span>Empleado<span class="icono derecha icon-chevron-down"></span></a>
                   <ul>
                     <li><a href="#">Registrar Servicio</a></li>
                     <li><a href="#">Eliminar Servicio</a></li>
@@ -30,7 +30,7 @@
                     <li><a href="#">Listar Servicios</a></li>
                   </ul>
                 </li>
-                <li><a class="admin" href="#">Administrador<span class="icono derecha icon-chevron-down"></span></a>
+                <li><a class="admin" href="#"><span class="icono izquierda  icon-users"></span>Administrador<span class="icono derecha icon-chevron-down"></span></a>
                   <ul>
                     <li><a href="#">Registrar Lugar Turistico</a></li>
                     <li><a href="#">Registrar Provincia</a></li>
