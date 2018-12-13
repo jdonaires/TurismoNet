@@ -66,6 +66,9 @@ CREATE TABLE Empresa (
  EmpresaImage MEDIUMBLOB NOT NULL, -- ALMACENAR LA IMAGEN
  
  CONSTRAINT pk_idEmpresa PRIMARY KEY (idEmpresa),
+ CONSTRAINT uni_name UNIQUE (nombreEmpresa),
+ CONSTRAINT uni_razonS UNIQUE (razonSocial),
+ CONSTRAINT uni_correoempresa UNIQUE (correoEmpresa),
  CONSTRAINT uni_ruc UNIQUE (ruc),
  CONSTRAINT uni_cel UNIQUE (celular),
  CONSTRAINT uni_fijo UNIQUE (fijo),
