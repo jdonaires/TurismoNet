@@ -231,3 +231,34 @@ BEGIN
 
 END $$
 DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE regServicio 
+(
+	_nombreEmpresa VARCHAR(30),
+	_razonSocial VARCHAR(30),
+	_ruc CHAR(11),
+	_nombreServicio VARCHAR(50),
+	_horarioAtención VARCHAR(50),
+	_descripcionServicio TEXT,
+	_imgServicio MEDIUMBLOB,
+	_idUbicacion CHAR(4),
+	_idLugar CHAR(4),
+	_estadoServicio CHAR(1)
+)
+BEGIN
+
+	DECLARE _idservicioEmpresa CHAR(5);
+	DECLARE _idEmpresa CHAR(5);
+	DECLARE _estadoServicio CHAR(1);
+	
+	SET _idservicioEmpresa = (SELECT (CONCAT('S',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM servicioEmpresa);
+	SET _idEmpresa = (SELECT idEmpresa FROM empresa WHERE nombreEmpresa=_nombreEmpresa AND razonSocial=_razonSocial AND ruc=_ruc);
+	SET _estadoServicio = '1';
+	
+	IF _idservicioEmpresa != '' THEN
+		INSERT INTO servicioEmpresa (idservicioEmpresa,idEmpresa,nombreServicio,horarioAtención,descripcionServicio,imgServicio,idUbicacion,idLugar,estadoServicio)
+		VALUES (_idservicioEmpresa,_idEmpresa,_nombreServicio,_horarioAtención,_descripcionServicio,_imgServicio,_idUbicacion,_idLugar,_estadoServicio);
+	END IF;
+END $$
+DELIMITER ;
