@@ -3,7 +3,6 @@ require_once('../DAL/DBAccess.php');
 require_once('../DAO/Sesiones.php');
 require_once('CerrarSesion.php');
 
-// session_start();
 $nameUser=$_SESSION['usuario_nombre'];
 $nameRS=$_SESSION['usuario_razonSocial'];
 $nameRuc=$_SESSION['usuario_ruc'];
