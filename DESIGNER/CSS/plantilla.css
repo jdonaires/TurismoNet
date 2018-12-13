@@ -141,3 +141,50 @@ body {
   margin: auto;
   margin-right: 10px;
 }
+
+.cabecera .cabecera-2 {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.cabecera .cabecera-2 .cabecera-contenido {
+  margin-left: 70%;
+}
+
+.cabecera .cabecera-2 .cabecera-contenido h3 {
+  font-size: 15px;
+  text-align: center;
+  padding: 0px 0px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.cabecera .cabecera-2 .cabecera-salir {
+  margin-left: 2%;
+}
+
+.cabecera .cabecera-2 .cabecera-salir form {
+  width: 150px;
+}
+
+.cabecera .cabecera-2 .cabecera-salir input[type="submit"] {
+  font-size: 16px;
+  font-family: Arial;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  margin: 5px auto;
+  color: #fff;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  transition: all .5s ease;
+}
+
+.cabecera .cabecera-2 .cabecera-salir input[type="submit"]:hover {
+  border: 3px solid rgba(255, 255, 255, 1);
+}

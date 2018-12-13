@@ -8,6 +8,10 @@ $nameRS=$_SESSION['usuario_razonSocial'];
 $nameRuc=$_SESSION['usuario_ruc'];
 $tipoUsuario=$_SESSION['usuario_tipo'];
 
+if (!isset($nameUser)&&!isset($tipoUsuario))
+{
+  header('Location: index.php');
+}
  ?>
 
 
@@ -21,7 +25,7 @@ $tipoUsuario=$_SESSION['usuario_tipo'];
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- TIEMPO EN MILISEGUNDOS PARA QUE LA PÁG SE RECARGUE TRAS INACTIVIDAD-->
-    <script>setTimeout('document.location.reload()',20000); </script>
+    <!-- <script>setTimeout('document.location.reload()',20000); </script> -->
   </head>
   <body>
     <div class="cabecera">
@@ -33,8 +37,15 @@ $tipoUsuario=$_SESSION['usuario_tipo'];
         // foreach ($resultdo as $value)
         // {
           ?>
-          <h3><?php echo $nameUser ?>  <?php echo $nameRS ?></h3>
-          <h3><?php echo $nameRuc ?></h3>
+          <div class="cabecera-contenido">
+            <h3><?php echo $nameUser ?>  <?php echo $nameRS ?></h3>
+            <h3><?php echo $nameRuc ?></h3>
+          </div>
+          <div class="cabecera-salir">
+            <form class="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+              <input type="submit" name="salir" value="Cerrar Sesión">
+            </form>
+          </div>
           <?php
         // }
          ?>
