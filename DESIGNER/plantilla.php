@@ -1,8 +1,12 @@
 <?php
 require_once('../DAL/DBAccess.php');
 require_once('../DAO/Sesiones.php');
+require_once('CerrarSesion.php');
 
-session_start();
+// session_start();
+$nameUser=$_SESSION['usuario_nombre'];
+$nameRS=$_SESSION['usuario_razonSocial'];
+$nameRuc=$_SESSION['usuario_ruc'];
 $tipoUsuario=$_SESSION['usuario_tipo'];
 
  ?>
@@ -16,6 +20,9 @@ $tipoUsuario=$_SESSION['usuario_tipo'];
     <title></title>
     <link rel="stylesheet" href="CSS/plantilla.css">
     <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- TIEMPO EN MILISEGUNDOS PARA QUE LA PÁG SE RECARGUE TRAS INACTIVIDAD-->
+    <script>setTimeout('document.location.reload()',20000); </script>
   </head>
   <body>
     <div class="cabecera">
@@ -27,8 +34,8 @@ $tipoUsuario=$_SESSION['usuario_tipo'];
         // foreach ($resultdo as $value)
         // {
           ?>
-          <h3><?php // echo $value->__GET('nombreEmpresa') ?>  <?php // echo $value->__GET('razonSocial') ?></h3>
-          <h3><?php // echo $value->__GET('ruc') ?></h3>
+          <h3><?php echo $nameUser ?>  <?php echo $nameRS ?></h3>
+          <h3><?php echo $nameRuc ?></h3>
           <?php
         // }
          ?>

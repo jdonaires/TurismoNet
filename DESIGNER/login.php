@@ -18,6 +18,9 @@ if (isset($_POST['Ingresar']))
     // $infoUsuario = $sesiBOL->fetch(PDO::FETCH_ASSOC)
     foreach ($resultdo as $value)
     {
+      $_SESSION['usuario_nombre'] = $value->__GET('nombreEmpresa');
+      $_SESSION['usuario_razonSocial'] = $value->__GET('razonSocial');
+      $_SESSION['usuario_ruc'] = $value->__GET('ruc');
       $_SESSION['usuario_tipo'] = $value->__GET('tipo');
     }
   }
