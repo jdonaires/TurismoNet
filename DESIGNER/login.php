@@ -12,11 +12,15 @@ if (isset($_POST['Ingresar']))
   $sesiBOL->__SET('contraseña', $_POST['contraseña']);
   $resultdo = $sesiDAO->Validar_usuario($sesiBOL);
 
-  // if (!empty($resultdo)) {
-  //   foreach ($resultdo as $value) {
-  //     $_SESSION['usuario_tipo'] = $valie->__GET('tipo');
-  //   }
-  // }
+  if (!empty($resultdo))
+  {
+    session_start();
+    // $infoUsuario = $sesiBOL->fetch(PDO::FETCH_ASSOC)
+    foreach ($resultdo as $value)
+    {
+      $_SESSION['usuario_tipo'] = $value->__GET('tipo');
+    }
+  }
 }
 
 

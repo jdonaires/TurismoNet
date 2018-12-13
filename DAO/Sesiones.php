@@ -39,13 +39,13 @@ class SesionDAO
         $resultd[] = $iniciar;
 
         header("Location: plantilla.php");
-        $infoUsuario = $statement->fetch(PDO::FETCH_ASSOC);
+        // $infoUsuario = $statement->fetch(PDO::FETCH_ASSOC);
         session_start();
-        $_SESSION['usuario_tipo'] = $infoUsuario['tipo'];
-        echo "<script>
-                alert(.'$infoUsuario'.);
-                window.location= 'url.php'
-              </script>";
+        // $_SESSION['usuario_tipo'] = $infoUsuario['tipo'];
+        // echo "<script>
+        //         alert(.'$infoUsuario'.);
+        //         window.location= 'url.php'
+        //       </script>";
       }
       return $resultd;
     }
@@ -54,35 +54,6 @@ class SesionDAO
       die($e->getMessage());
     }
   }
-
-  // OBTENER DATOS DEL USUARIO
-  // public function obtener_datos(SesionesBOL $sesiones)
-  // {
-  //   try
-  //   {
-  //     $reslt = array();
-  //
-  //     $statement = $this->pdo->prepare("CALL obtenedorDatos(?)");
-  //     $statement->bindParam(1,$sesiones->__GET('usuarioCorreo'));
-  //     $statement->execute();
-  //
-  //     foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
-  //     {
-  //       $obtener = new SesionesBOL();
-  //
-  //       $obtener->__SET('nombreEmpresa',  $r->nombreEmpresa);
-  //       $obtener->__SET('razonSocial',    $r->razonSocial);
-  //       $obtener->__SET('ruc',            $r->ruc);
-  //
-  //       $reslt[] = $obtener;
-  //     }
-  //   }
-  //   catch (Exception $e)
-  //   {
-  //     die($e->getMessage());
-  //   }
-  //
-  // }
 }
 
  ?>
