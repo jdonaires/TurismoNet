@@ -24,6 +24,7 @@
               <ul>
                 <li><a class="empleado" href="#"><span class="icono izquierda  icon-man"></span>Empleado<span class="icono derecha icon-chevron-down"></span></a>
                   <ul>
+                    <li><a href="#">Bandera de Entrada</a></li>
                     <li><a href="#">Registrar Servicio</a></li>
                     <li><a href="#">Eliminar Servicio</a></li>
                     <li><a href="#">Modificar Servicio</a></li>
