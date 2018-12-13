@@ -191,3 +191,43 @@ BEGIN
 	SELECT EmpresaImage, nombreEmpresa, razonSocial, ruc, celular, fijo, dirrecion, descripcion FROM Empresa;
 END $$
 DELIMITER ;
+
+
+DELIMITER $$
+CREATE PROCEDURE validarSesion 
+(
+	_usuarioCorreo VARCHAR(20),
+	_contraseña VARCHAR(20)
+)
+BEGIN
+	DECLARE _tipo VARCHAR(20);
+	DECLARE _idObtenido CHAR(5);
+	SET _tipo = (SELECT tipo FROM usuario WHERE usuarioCorreo=_usuarioCorreo AND contraseña=_contraseña);
+	SET _idObtenido = (SELECT idObtenido FROM usuario WHERE usuarioCorreo=_usuarioCorreo AND contraseña=_contraseña);
+	
+	IF _tipo!='' AND _idObtenido!='' THEN
+		SELECT nombreEmpresa, razonSocial, ruc, tipo FROM usuario INNER JOIN empresa ON empresa.idEmpresa = usuario.idObtenido
+		WHERE usuario.usuarioCorreo=_usuarioCorreo AND usuario.contraseña=_contraseña;
+	END IF;
+END $$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE PROCEDURE obtenedorDatos 
+(
+	_usuarioCorreo VARCHAR(20)
+)
+BEGIN
+	DECLARE _tipo VARCHAR(20);
+	DECLARE _idObtenido CHAR(5);
+	SET _tipo = (SELECT tipo FROM usuario WHERE usuarioCorreo=_usuarioCorreo);
+	SET _idObtenido = (SELECT idObtenido FROM usuario WHERE usuarioCorreo=_usuarioCorreo);
+	
+	IF _tipo!='' AND _idObtenido!='' THEN
+		SELECT nombreEmpresa, razonSocial, ruc FROM usuario INNER JOIN empresa ON empresa.idEmpresa = usuario.idObtenido
+		WHERE usuario.tipo=_tipo AND usuario.idObtenido=_idObtenido;
+	END IF;
+
+END $$
+DELIMITER ;

@@ -110,7 +110,7 @@ body {
   padding: 10px 0px;
 }
 
-.contenedor-fondo-login .contenedor-fomulario-1 .contenedor-botones input[type="button"] {
+.contenedor-fondo-login .contenedor-fomulario-1 .contenedor-botones input[type="submit"] {
   background: rgba( 36, 113, 163 , 1);
   color: #fff;
   font-size: 15px;
@@ -125,7 +125,7 @@ body {
   transition: all .5s ease;
 }
 
-.contenedor-fondo-login .contenedor-fomulario-1 .contenedor-botones input[type="button"]:hover {
+.contenedor-fondo-login .contenedor-fomulario-1 .contenedor-botones input[type="submit"]:hover {
   background: rgba(  192, 57, 43, 1);
 }
 

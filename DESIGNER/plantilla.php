@@ -1,3 +1,13 @@
+<?php
+require_once('../DAL/DBAccess.php');
+require_once('../DAO/Sesiones.php');
+
+session_start();
+$tipoUsuario=$_SESSION['usuario_tipo'];
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -13,7 +23,15 @@
         <li><a href="#"><span class="icono izquierda icon-home"></span>Inicio</a></li>
       </div>
       <div class="cabecera-2">
-
+        <?php
+        // foreach ($resultdo as $value)
+        // {
+          ?>
+          <h3><?php // echo $value->__GET('nombreEmpresa') ?>  <?php // echo $value->__GET('razonSocial') ?></h3>
+          <h3><?php // echo $value->__GET('ruc') ?></h3>
+          <?php
+        // }
+         ?>
       </div>
     </div>
     <div class="contenido-1">
@@ -22,22 +40,29 @@
           <header>
             <nav>
               <ul>
-                <li><a class="empleado" href="#"><span class="icono izquierda  icon-man"></span>Empleado<span class="icono derecha icon-chevron-down"></span></a>
-                  <ul>
-                    <li><a href="#">Bandera de Entrada</a></li>
-                    <li><a href="#">Registrar Servicio</a></li>
-                    <li><a href="#">Eliminar Servicio</a></li>
-                    <li><a href="#">Modificar Servicio</a></li>
-                    <li><a href="#">Listar Servicios</a></li>
-                  </ul>
-                </li>
-                <li><a class="admin" href="#"><span class="icono izquierda  icon-users"></span>Administrador<span class="icono derecha icon-chevron-down"></span></a>
-                  <ul>
-                    <li><a href="#">Registrar Lugar Turistico</a></li>
-                    <li><a href="#">Registrar Provincia</a></li>
-                    <li><a href="#">Modificar Lugar Turistico</a></li>
-                  </ul>
-                </li>
+                <?php if ($tipoUsuario=="Empresa")
+                {
+                  ?>
+                  <li><a class="empleado" href="#"><span class="icono izquierda  icon-man"></span>Empleado<span class="icono derecha icon-chevron-down"></span></a>
+                    <ul>
+                      <li><a href="#">Bandera de Entrada</a></li>
+                      <li><a href="#">Registrar Servicio</a></li>
+                      <li><a href="#">Eliminar Servicio</a></li>
+                      <li><a href="#">Modificar Servicio</a></li>
+                      <li><a href="#">Listar Servicios</a></li>
+                    </ul>
+                  </li>
+                  <?php
+                } elseif ($tipoUsuario=="Admin") {?>
+                  <li><a class="admin" href="#"><span class="icono izquierda  icon-users"></span>Administrador<span class="icono derecha icon-chevron-down"></span></a>
+                    <ul>
+                      <li><a href="#">Registrar Lugar Turistico</a></li>
+                      <li><a href="#">Registrar Provincia</a></li>
+                      <li><a href="#">Modificar Lugar Turistico</a></li>
+                    </ul>
+                  </li>
+                  <?php
+                }?>
               </ul>
             </nav>
           </header>
