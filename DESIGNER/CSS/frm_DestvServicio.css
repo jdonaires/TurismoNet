@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*ESTILO PARA LA TABLA DONDE MOSTRAREMOS LOS DATOS*/
+.sub-contenedor-list-producto {
+  padding: 0px 0px;
+  /* background: rgba(0,0,0,1); */
+  width: 80%;
+  height: 450px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.sub-contenedor-list-producto table {
+  color: #000;
+  width: 100%;
+  font-size: 13px;
+  font-family: Arial;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.sub-contenedor-list-producto table tr td {
+  padding: 10px;
+}
+
+.sub-contenedor-list-producto table thead {
+  background: rgba(16, 57, 121,1);
+  color: #fff;
+  height: 35px;
+  text-align: center;
+  border-bottom: 2px solid #000;
+}
+
+.sub-contenedor-list-producto table tr:nth-child(even) {
+  background: #ddd;
+}
+
+.sub-contenedor-list-producto table tr{
+  transition: all .5s ease;
+}
+
+/* .sub-contenedor-list-producto table tr:hover {
+  background: rgba(16, 57, 121,.6);
+  color: #fff;
+} */
+/* .sub-contenedor-list-producto table tr td input[type="submit"] */
+ .sub-contenedor-list-producto table tr td .activado {
+  background: rgba(37, 159, 64, 1);
+  color: #fff;
+  font-size: 14px;
+  font-family: Arial;
+  padding: 8px 0px;
+  width: 70%;
+  height: auto;
+  border-radius: 5px;
+  border: none;
+  transition: all .5s ease;
+}
+
+.sub-contenedor-list-producto table tr td .activado:hover {
+  background: rgba(20, 131, 46, 1);
+  border-bottom: 3px solid rgba(23, 84, 37, 1);
+}
+
+
+.sub-contenedor-list-producto table tr td .desactivado {
+ background: rgba(224, 18, 55, 1);
+ color: #fff;
+ font-size: 14px;
+ font-family: Arial;
+ padding: 8px 0px;
+ width: 70%;
+ height: auto;
+ border-radius: 5px;
+ border: none;
+ transition: all .5s ease;
+}
+
+.sub-contenedor-list-producto table tr td .desactivado:hover {
+ background: rgba(188, 14, 45, 1);
+ border-bottom: 3px solid rgba(152, 16, 40, 1);
+}

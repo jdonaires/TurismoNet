@@ -25,7 +25,7 @@ if (!isset($nameUser)&&!isset($tipoUsuario))
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- TIEMPO EN MILISEGUNDOS PARA QUE LA PÁG SE RECARGUE TRAS INACTIVIDAD-->
-    <script>setTimeout('document.location.reload()',20000); </script>
+    <script>setTimeout('document.location.reload()',120000); </script>
   </head>
   <body>
     <div class="cabecera">
@@ -63,8 +63,8 @@ if (!isset($nameUser)&&!isset($tipoUsuario))
                   <li><a class="empleado" href="#"><span class="icono izquierda  icon-man"></span>Empleado<span class="icono derecha icon-chevron-down"></span></a>
                     <ul>
                       <li><a href="#">Bandera de Entrada</a></li>
-                      <li><a href="#">Registrar Servicio</a></li>
-                      <li><a href="#">Eliminar Servicio</a></li>
+                      <li><a href="#" id="reg_servicio" >Registrar Servicio</a></li>
+                      <li><a href="#" id="desactivar_servicio">Eliminar Servicio</a></li>
                       <li><a href="#">Modificar Servicio</a></li>
                       <li><a href="#">Listar Servicios</a></li>
                     </ul>

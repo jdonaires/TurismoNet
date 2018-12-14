@@ -5,6 +5,8 @@
  */
 class ServicioBOL
 {
+  private $idservicioEmpresa;
+  private $idEmpresa;
   private $nombreEmpresa;
   private $razonSocial;
   private $ruc;
@@ -14,6 +16,7 @@ class ServicioBOL
   private $imgServicio;
   private $Provincia;
   private $titulo;
+  private $estadoServicio;
 
   public function __GET($x)
 	{

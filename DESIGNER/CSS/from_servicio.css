@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.servicio-contenido {
+  display: block;
+  background: rgba(0, 0, 0, 0);
+  margin: 20px auto;
+  width: 50%;
+  height: auto;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.servicio-contenido h3 {
+  padding: 10px 0px;
+  text-align: center;
+  font-size: 23px;
+  font-family: Arial;
+}
+
+.servicio-contenido input[type="text"],
+.servicio-contenido .idUbicacion,
+.servicio-contenido .idLugar {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 13px;
+  font-family: Arial;
+  width: 100%;
+  height: 30px;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.servicio-contenido .contenido-descripcion {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.servicio-contenido .contenido-descripcion textarea {
+  padding: 5px 5px;
+  margin-top: 5px;
+  width: 65%;
+  height: 200px;
+  border-radius: 5px;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  font-family: Arial;
+  text-align: justify;
+}
+
+.servicio-contenido .contenido-descripcion .img-file {
+  margin-top: 5px;
+  margin-left: 5px;
+  background: rgba(0, 0, 0, 0);
+  width: 100%;
+  border-radius: 5px;
+}
+
+/*DISEÑO PARA EL BTN AGREGAR IMAGEN */
+.servicio-contenido .contenido-descripcion .img-file .div-file {
+  position: relative;
+  color: #fff;
+  background: rgba(4, 86, 239,1);
+  40, 116, 166
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  font-family: Arial;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: all .5s ease;
+}
+.servicio-contenido .contenido-descripcion .img-file .div-file p {
+  padding: 5px;
+  text-align: center;
+}
+
+.servicio-contenido .contenido-descripcion .img-file .div-file input[type="file"] {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.servicio-contenido .contenido-descripcion .img-file .div-file:hover {
+    background: rgba(5, 65, 178,1);
+    border-bottom: 4px solid rgba(16, 57, 121,1);
+}
+
+.servicio-contenido .contenido-descripcion .img-file img {
+  width: 100%;
+  height: 160px;
+  border: 1px rgba(0,0,0,.3);
+  border-radius: 5px;
+}
+
+.servicio-contenido input[type="submit"] {
+  width: 100%;
+  margin-top: 10px;
+  height: 40px;
+  background: rgba(4, 86, 239,1);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial;
+  transition: all .5s ease;
+}
+
+.servicio-contenido input[type="submit"]:hover {
+  background: rgba(5, 65, 178,1);
+  border-bottom: 4px solid rgba(16, 57, 121,1);
+}

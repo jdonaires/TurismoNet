@@ -275,3 +275,51 @@ BEGIN
 	SELECT titulo FROM lugarTuristico;
 END $$ 
 DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE listServicioUsuario 
+(
+	_nombreEmpresa VARCHAR(30),
+	_razonSocial VARCHAR(20),
+	_ruc CHAR(11)
+)
+BEGIN 
+
+	IF _nombreEmpresa != '' AND _razonSocial != '' AND _ruc != '' THEN
+	
+		SELECT servicioEmpresa.idservicioEmpresa, servicioEmpresa.idEmpresa, servicioEmpresa.nombreServicio, provinciaubicacion.Provincia, servicioEmpresa.estadoServicio 
+		FROM servicioEmpresa INNER JOIN provinciaubicacion
+		ON  servicioEmpresa.idUbicacion = provinciaubicacion.idUbicacion 
+		JOIN empresa
+		ON empresa.idEmpresa = servicioempresa.idEmpresa
+		WHERE empresa.nombreEmpresa = _nombreEmpresa AND empresa.razonSocial = _razonSocial AND empresa.ruc = _ruc;
+	
+	END IF;
+
+END $$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE PROCEDURE Modificar_Servicio
+(
+	_idservicioEmpresa CHAR(5),
+	_estadoServicio CHAR(1)
+)
+BEGIN 
+
+	IF _estadoServicio != '' THEN
+	
+		CASE _estadoServicio
+			WHEN '1' THEN
+				UPDATE servicioEmpresa SET estadoServicio = '0' WHERE idservicioEmpresa=_idservicioEmpresa AND estadoServicio=_estadoServicio;
+			WHEN '0' THEN
+				UPDATE servicioEmpresa SET estadoServicio = '1' WHERE idservicioEmpresa=_idservicioEmpresa AND estadoServicio=_estadoServicio;
+			ELSE
+				SELECT 'EL ESTADO NO ESTA DISPONIBLE';
+		END CASE;
+	
+	END IF;
+
+END $$
+DELIMITER ;

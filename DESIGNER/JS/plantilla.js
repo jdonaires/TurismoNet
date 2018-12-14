@@ -15,11 +15,11 @@ $(document).ready(function() {
 
 
   // PARA LLAMAR A LOS FORMULARIOS
-  $('#persona').click(function() {
-      $('#contenido').load("registro.php");
+  $('#reg_servicio').click(function() {
+      $('#iframe').load("from_servicio.php");
   });
-  $('#reg-productos').click(function() {
-    $('#contenido').load("reg_producto.php");
+  $('#desactivar_servicio').click(function() {
+    $('#iframe').load("frm_DestvServicio.php");
   });
   $('#Inicio').click(function() {
     $('#contenido').load("presentacion.php");
