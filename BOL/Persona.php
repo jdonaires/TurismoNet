@@ -1,14 +1,14 @@
 <?php
 class Persona
 {
+	private $correo;
+	private $contraseña;
 	private $nombres;
 	private $apPaterno;
 	private $apMaterno;
 	private $dni;
-	private $correo;
-	private $celular;
-  private $sexo;
-	private $contraseña;
+  private $celular;
+	private $sexo;
 	private $tipo;
 
 	public function __GET($x)

@@ -30,45 +30,6 @@ END $$
 DELIMITER ;
 
 
-/*REGISTRO DE PERSONAS*/
-DELIMITER $$
-CREATE PROCEDURE regPersona
-(
-	_correo VARCHAR(20), -- TIENE QUE SER UNICO
-	_contraseña VARCHAR(20),
-	_nombres VARCHAR(20),
-	_apPaterno VARCHAR(20),
-	_apMaterno VARCHAR(20),
-	_dni CHAR(8), -- DNI UNICO POR PERSONA
-	_celular CHAR(9), -- SE NECESITA PARA REALIZAR CHARLA PERSONAL
-	_sexo CHAR(1),
-	_tipo VARCHAR(20)
-)
-BEGIN
-	DECLARE _idPersona CHAR(5);
-	DECLARE _idUsuario CHAR(5);
-	DECLARE _obtIdPersona CHAR(5); -- OBTENEMOS EL ID DE LA PERSONA
-	DECLARE _validarDni CHAR(8);
-	SET _idPersona = (SELECT (CONCAT('P',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM Persona); -- GENERAR CODIGO DE ID DE PERSONA
-	SET _idUsuario = (SELECT (CONCAT('U',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM usuario); -- GENERAR CODIGO DE ID DE USUARIO DE LA PERSONA
-	SET _obtIdPersona = (SELECT DISTINCT idPersona FROM Persona WHERE dni = _dni); -- OBTENEMOS EL ID DE LA PERSONA
-	SET _validarDni = (SELECT DISTINCT dni FROM Persona WHERE dni = _dni); -- OBTENEMOS EL DNI LA PERSONA PARA VERIFICAR SI YA SE ENCUENTRA REGISTRADA
-
-		IF _validarDni = _dni THEN
-			SELECT 'EL USUARIO YA SE ENCUENTRA REGISTRADO';
-		ELSE
-			IF _idPersona != '' THEN
-				INSERT INTO Persona (idPersona,nombres,apPaterno,apMaterno,dni,correo,celular,sexo)
-				VALUES (_idPersona,_nombres,_apPaterno,_apMaterno,_dni,_correo,_celular,_sexo);
-
-				CALL regusuarioEmpresa (_obtIdPersona,_idPersona,_correo,_contraseña,_tipo);
-			END IF;
-		END IF;
-
-END $$
-DELIMITER ;
-
-
 
 /*PROCEDIMIENTO PARA LISTAR LUGAR - VENTANA PRINCIPAL*/
 DELIMITER $$
@@ -129,6 +90,44 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+/*REGISTRO DE PERSONAS*/
+DELIMITER $$
+CREATE PROCEDURE regPersona
+(
+	_correo VARCHAR(20), -- TIENE QUE SER UNICO
+	_contraseña VARCHAR(20),
+	_nombres VARCHAR(20),
+	_apPaterno VARCHAR(20),
+	_apMaterno VARCHAR(20),
+	_dni CHAR(8), -- DNI UNICO POR PERSONA
+	_celular CHAR(9), -- SE NECESITA PARA REALIZAR CHARLA PERSONAL
+	_sexo CHAR(1),
+	_tipo VARCHAR(20)
+)
+BEGIN
+	DECLARE _idPersona CHAR(5);
+	DECLARE _idUsuario CHAR(5);
+	DECLARE _obtIdPersona CHAR(5); -- OBTENEMOS EL ID DE LA PERSONA
+	DECLARE _validarDni CHAR(8);
+	SET _idPersona = (SELECT (CONCAT('P',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM Persona); -- GENERAR CODIGO DE ID DE PERSONA
+	SET _idUsuario = (SELECT (CONCAT('U',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM usuario); -- GENERAR CODIGO DE ID DE USUARIO DE LA PERSONA
+	SET _obtIdPersona = (SELECT DISTINCT idPersona FROM Persona WHERE dni = _dni); -- OBTENEMOS EL ID DE LA PERSONA
+	SET _validarDni = (SELECT DISTINCT dni FROM Persona WHERE dni = _dni); -- OBTENEMOS EL DNI LA PERSONA PARA VERIFICAR SI YA SE ENCUENTRA REGISTRADA
+
+		IF _validarDni = _dni THEN
+			SELECT 'EL USUARIO YA SE ENCUENTRA REGISTRADO';
+		ELSE
+			IF _idPersona != '' THEN
+				INSERT INTO Persona (idPersona,nombres,apPaterno,apMaterno,dni,correo,celular,sexo)
+				VALUES (_idPersona,_nombres,_apPaterno,_apMaterno,_dni,_correo,_celular,_sexo);
+
+				CALL regusuarioEmpresa (_obtIdPersona,_idPersona,_correo,_contraseña,_tipo);
+			END IF;
+		END IF;
+
+END $$
+DELIMITER ;
 
 /*REGISTRO DE LA EMPRESA*/
 DELIMITER $$

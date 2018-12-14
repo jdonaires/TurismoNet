@@ -105,6 +105,7 @@ class ServicioDAO
   {
     try
     {
+      $modifilistar = array();
       $statement = $this->pdo->prepare("CALL lis_ServicioM(?,?,?)");
       $statement->bindParam(1,$lisModificar->__GET('idservicioEmpresa'));
       $statement->bindParam(2,$lisModificar->__GET('nombreEmpresa'));
@@ -115,11 +116,12 @@ class ServicioDAO
       {
         $ModiList = new ServicioBOL();
 
-        $ModiList->__SET('nombreServicio');
-        $ModiList->__SET('horarioAtención');
-        $ModiList->__SET('descripcionServicio');
-        $ModiList->__SET('imgServicio');
+        $ModiList->__SET('nombreServicio'     ,$r->nombreServicio);
+        $ModiList->__SET('horarioAtención'    ,$r->horarioAtención);
+        $ModiList->__SET('descripcionServicio',$r->descripcionServicio);
+        $ModiList->__SET('imgServicio'        ,$r->imgServicio);
 
+        $modifilistar[]=$ModiList;
       }
     }
     catch (Exception $e)

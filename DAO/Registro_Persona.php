@@ -17,7 +17,7 @@ class PersonaDao
 	{
 		try
 		{
-			$statement = $this->pdo->prepare("CALL regPersona(?,?,?,?,?,?,?,?)");
+			$statement = $this->pdo->prepare("CALL regPersona(?,?,?,?,?,?,?,?,?)");
 	    $statement->bindParam(1,$persona->__GET('correo'));
 			$statement->bindParam(2,$persona->__GET('contraseña'));
 			$statement->bindParam(3,$persona->__GET('nombres'));
