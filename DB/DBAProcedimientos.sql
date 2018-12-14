@@ -323,3 +323,24 @@ BEGIN
 
 END $$
 DELIMITER ;
+
+
+DELIMITER $$
+CREATE PROCEDURE lis_ServicioM 
+(
+	_idservicioEmpresa CHAR(5),
+	_nombreEmpresa VARCHAR(20),
+	_ruc CHAR(11)
+)
+BEGIN
+	DECLARE _idEmpresa CHAR(5);
+	SET _idEmpresa = (SELECT idEmpresa FROM empresa WHERE nombreEmpresa=_nombreEmpresa AND ruc=_ruc);
+	
+	IF _idEmpresa != '' THEN
+		SELECT nombreServicio, horarioAtención, descripcionServicio, imgServicio FROM servicioEmpresa 
+		WHERE idservicioEmpresa=_idservicioEmpresa AND idEmpresa=_idEmpresa;
+	ELSE
+		SELECT 'DATOS NO ENCONTRADOS EN LA BASE DATOS';
+	END IF;
+END $$
+DELIMITER ;

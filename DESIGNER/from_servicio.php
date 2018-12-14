@@ -5,10 +5,6 @@ require_once('../DAO/Registro_Servicio.php');
 require_once('../DAO/Registro_Provincia.php');
 require_once('../DAO/Lugar_turistico.php');
 
-// $nameUser=$_SESSION['usuario_nombre'];
-// $nameRS=$_SESSION['usuario_razonSocial'];
-// $nameRuc=$_SESSION['usuario_ruc'];
-
 $servicioBOL = new ServicioBOL();
 $servicioDAO = new ServicioDAO();
 
