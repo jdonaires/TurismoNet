@@ -243,8 +243,7 @@ CREATE PROCEDURE regServicio
 	_descripcionServicio TEXT,
 	_imgServicio MEDIUMBLOB,
 	_idUbicacion CHAR(4),
-	_idLugar CHAR(4),
-	_estadoServicio CHAR(1)
+	_idLugar CHAR(4)
 )
 BEGIN
 
