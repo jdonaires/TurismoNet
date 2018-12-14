@@ -87,6 +87,28 @@ class TuristicoDAO
 			die($e->getMessage());
 		}
 	}
+
+	public function List_LugarTitulo()
+	{
+		try {
+			$result = array();
+
+			$statement = $this->pdo->prepare("call listLugarTuristico");
+			$statement->execute();
+
+			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$lisLugar = new Turistico();
+
+				$lisLugar->__SET('titulo',	$r->titulo);
+
+				$result[] = $lisLugar;
+			}
+			return $result;
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
 }
 
 ?>

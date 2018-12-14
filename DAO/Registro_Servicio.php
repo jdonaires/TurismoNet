@@ -30,8 +30,8 @@ class ServicioDAO
       $statement->bindParam(5,$servicio->__GET('horarioAtención'));
       $statement->bindParam(6,$servicio->__GET('descripcionServicio'));
       $statement->bindParam(7,$servicio->__GET('imgServicio'),PDO::PARAM_LOB);
-      $statement->bindParam(8,$servicio->__GET('idUbicacion'));
-      $statement->bindParam(9,$servicio->__GET('idLugar'));
+      $statement->bindParam(8,$servicio->__GET('Provincia'));
+      $statement->bindParam(9,$servicio->__GET('titulo'));
 
       $statement->execute();
     }

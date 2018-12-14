@@ -242,15 +242,19 @@ CREATE PROCEDURE regServicio
 	_horarioAtención VARCHAR(50),
 	_descripcionServicio TEXT,
 	_imgServicio MEDIUMBLOB,
-	_idUbicacion CHAR(4),
-	_idLugar CHAR(4)
+	_Provincia VARCHAR(20),
+	_titulo VARCHAR(30)
 )
 BEGIN
 
 	DECLARE _idservicioEmpresa CHAR(5);
 	DECLARE _idEmpresa CHAR(5);
 	DECLARE _estadoServicio CHAR(1);
+	DECLARE _idUbicacion CHAR(4);
+	DECLARE _idLugar CHAR(4);
 	
+	SET _idLugar = (SELECT idLugar FROM lugarturistico WHERE titulo=_titulo);
+	SET _idUbicacion = (SELECT idUbicacion FROM ProvinciaUbicacion WHERE Provincia=_Provincia);
 	SET _idservicioEmpresa = (SELECT (CONCAT('S',RIGHT(CONCAT('00000000',(LTRIM(CAST((COUNT(*)+1)AS CHAR)))),4)))FROM servicioEmpresa);
 	SET _idEmpresa = (SELECT idEmpresa FROM empresa WHERE nombreEmpresa=_nombreEmpresa AND razonSocial=_razonSocial AND ruc=_ruc);
 	SET _estadoServicio = '1';
@@ -260,4 +264,14 @@ BEGIN
 		VALUES (_idservicioEmpresa,_idEmpresa,_nombreServicio,_horarioAtención,_descripcionServicio,_imgServicio,_idUbicacion,_idLugar,_estadoServicio);
 	END IF;
 END $$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE PROCEDURE listLugarTuristico 
+(
+)
+BEGIN 
+	SELECT titulo FROM lugarTuristico;
+END $$ 
 DELIMITER ;

@@ -12,8 +12,8 @@ class ServicioBOL
   private $horarioAtención;
   private $descripcionServicio;
   private $imgServicio;
-  private $idUbicacion;
-  private $idLugar;
+  private $Provincia;
+  private $titulo;
 
   public function __GET($x)
 	{
