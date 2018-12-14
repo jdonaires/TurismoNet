@@ -99,6 +99,35 @@ class ServicioDAO
     }
 
   }
+
+  // LISTAR CAMPO DE LOS SERVICI
+  public function lis_ServicioM(ServicioBOL $lisModificar)
+  {
+    try
+    {
+      $statement = $this->pdo->prepare("CALL lis_ServicioM(?,?,?)");
+      $statement->bindParam(1,$lisModificar->__GET('idservicioEmpresa'));
+      $statement->bindParam(2,$lisModificar->__GET('nombreEmpresa'));
+      $statement->bindParam(3,$lisModificar->__GET('ruc'));
+      $statement->execute();
+
+      foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
+      {
+        $ModiList = new ServicioBOL();
+
+        $ModiList->__SET('nombreServicio');
+        $ModiList->__SET('horarioAtención');
+        $ModiList->__SET('descripcionServicio');
+        $ModiList->__SET('imgServicio');
+
+      }
+    }
+    catch (Exception $e)
+    {
+
+    }
+
+  }
 }
 
  ?>
