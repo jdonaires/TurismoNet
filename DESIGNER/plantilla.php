@@ -73,8 +73,8 @@ if (!isset($nameUser)&&!isset($tipoUsuario))
                 } elseif ($tipoUsuario=="Admin") {?>
                   <li><a class="admin" href="#"><span class="icono izquierda  icon-users"></span>Administrador<span class="icono derecha icon-chevron-down"></span></a>
                     <ul>
-                      <li><a href="#">Registrar Lugar Turistico</a></li>
-                      <li><a href="#">Registrar Provincia</a></li>
+                      <li><a href="#" id="regTuristico">Registrar Lugar Turistico</a></li>
+                      <li><a href="#" id="regProvincia">Registrar Provincia</a></li>
                       <li><a href="#">Modificar Lugar Turistico</a></li>
                     </ul>
                   </li>

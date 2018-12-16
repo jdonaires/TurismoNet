@@ -24,7 +24,10 @@ $(document).ready(function() {
   $('#MDServicio').click(function() {
     $('#iframe').load("frm_modifServicio.php");
   });
-  $('#Venta').click(function() {
-    $('#contenido').load("reg_venta.php");
+  $('#regTuristico').click(function() {
+    $('#iframe').load("frm_turistico.php");
+  });
+  $('#regProvincia').click(function() {
+    $('#iframe').load("frm_provincia.php");
   });
 });
