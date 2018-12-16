@@ -65,7 +65,7 @@ if (!isset($nameUser)&&!isset($tipoUsuario))
                       <li><a href="#">Bandera de Entrada</a></li>
                       <li><a href="#" id="reg_servicio" >Registrar Servicio</a></li>
                       <li><a href="#" id="desactivar_servicio">Eliminar Servicio</a></li>
-                      <li><a href="#">Modificar Servicio</a></li>
+                      <li><a href="#" id="MDServicio">Modificar Servicio</a></li>
                       <li><a href="#">Listar Servicios</a></li>
                     </ul>
                   </li>

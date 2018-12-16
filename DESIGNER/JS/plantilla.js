@@ -21,8 +21,8 @@ $(document).ready(function() {
   $('#desactivar_servicio').click(function() {
     $('#iframe').load("frm_DestvServicio.php");
   });
-  $('#Inicio').click(function() {
-    $('#contenido').load("presentacion.php");
+  $('#MDServicio').click(function() {
+    $('#iframe').load("frm_modifServicio.php");
   });
   $('#Venta').click(function() {
     $('#contenido').load("reg_venta.php");
