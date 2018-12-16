@@ -47,16 +47,16 @@ class ServicioDAO
   }
 
   // LISTAR SERVICIOS SEGUN EL USUARIO
-  public function Listar_servicios(ServicioBOL $serviciolist)
+  public function Listar_servicios(ServicioBOL $servicio)
   {
     try
     {
       $resultadoList = array();
 
       $statement = $this->pdo->prepare("CALL listServicioUsuario (?,?,?)");
-      $statement->bindParam(1,$serviciolist->__GET('nombreEmpresa'));
-      $statement->bindParam(2,$serviciolist->__GET('razonSocial'));
-      $statement->bindParam(3,$serviciolist->__GET('ruc'));
+      $statement->bindParam(1,$servicio->__GET('nombreEmpresa'));
+      $statement->bindParam(2,$servicio->__GET('razonSocial'));
+      $statement->bindParam(3,$servicio->__GET('ruc'));
       $statement->execute();
 
       foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
@@ -70,6 +70,7 @@ class ServicioDAO
         $listServicio->__SET('estadoServicio',    $r->estadoServicio);
 
         $resultadoList[] = $listServicio;
+        // session_start();
       }
       return $resultadoList;
     }
@@ -81,17 +82,17 @@ class ServicioDAO
   }
 
   // MODIFICAR EL SERVICIO PARA CAMBIAR EL Estado
-  public function Modificar_Servicio(ServicioBOL $modificar)
+  public function Modificar_Servicio(ServicioBOL $servicio)
   {
     try
     {
       $statement = $this->pdo->prepare("CALL Modificar_Servicio(?,?)");
-      $statement->bindParam(1,$modificar->__GET('idservicioEmpresa'));
-      $statement->bindParam(2,$modificar->__GET('estadoServicio'));
+      $statement->bindParam(1,$servicio->__GET('idservicioEmpresa'));
+      $statement->bindParam(2,$servicio->__GET('estadoServicio'));
 
       $statement->execute();
       header("Location: plantilla.php");
-
+      // session_start();
     }
     catch (Exception $e)
     {
@@ -101,15 +102,15 @@ class ServicioDAO
   }
 
   // LISTAR CAMPO DE LOS SERVICI
-  public function lis_ServicioM(ServicioBOL $lisModificar)
+  public function lis_ServicioM(ServicioBOL $servicio)
   {
     try
     {
       $modifilistar = array();
       $statement = $this->pdo->prepare("CALL lis_ServicioM(?,?,?)");
-      $statement->bindParam(1,$lisModificar->__GET('idservicioEmpresa'));
-      $statement->bindParam(2,$lisModificar->__GET('nombreEmpresa'));
-      $statement->bindParam(3,$lisModificar->__GET('ruc'));
+      $statement->bindParam(1,$servicio->__GET('idservicioEmpresa'));
+      $statement->bindParam(2,$servicio->__GET('nombreEmpresa'));
+      $statement->bindParam(3,$servicio->__GET('ruc'));
       $statement->execute();
 
       foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
@@ -122,12 +123,14 @@ class ServicioDAO
         $ModiList->__SET('imgServicio'        ,$r->imgServicio);
 
         $modifilistar[]=$ModiList;
-        header("Location: plantilla.php");
+        // header("Location: frm_modifServicio.php");
+        // session_start();
       }
+      return $modifilistar;
     }
     catch (Exception $e)
     {
-
+      die($e->getMessage());
     }
 
   }

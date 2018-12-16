@@ -37,20 +37,5 @@
          ?>
       </div>
     </div>
-
-    <!-- <script>
-     $('#Estrellas').starrr({
-         rating:3,
-         change:function(e,valor){
-             alert(valor);
-
-         }
-
-     });
-
-      </script> -->
-<!--
-    <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="JS/starrr.js"></script> -->
   </body>
 </html>
