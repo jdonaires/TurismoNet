@@ -122,6 +122,7 @@ class ServicioDAO
         $ModiList->__SET('imgServicio'        ,$r->imgServicio);
 
         $modifilistar[]=$ModiList;
+        header("Location: plantilla.php");
       }
     }
     catch (Exception $e)
