@@ -7,6 +7,7 @@ class Turistico
 	private $imgLugar;
 	private $idUbicacion;
 	private $fecha;
+	private $Provincia;
 
 	public function __GET($x)
 	{

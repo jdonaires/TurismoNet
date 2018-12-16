@@ -177,7 +177,7 @@
   color: #6C6C6C;
 }
 
-.contenedor-lugares .sub-contenedor .contenedor-2 input[type="button"] {
+.contenedor-lugares .sub-contenedor .contenedor-2 input[type="submit"] {
   background: rgba(34, 153, 84, 1);
   color: #fff;
   font-family: Arial;
@@ -191,7 +191,7 @@
   transition: all .5s ease;
 }
 
-.contenedor-lugares .sub-contenedor .contenedor-2 input[type="button"]:hover {
+.contenedor-lugares .sub-contenedor .contenedor-2 input[type="submit"]:hover {
   background: rgba(243, 156, 18, 1);
   border-bottom: 3px solid rgba(186, 74, 0, 0.8);
 }

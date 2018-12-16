@@ -35,7 +35,10 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE listar_lugarTuristico ()
 BEGIN
-	SELECT titulo, imgLugar, descripcion FROM LugarTuristico;
+	SELECT DISTINCT idLugar, titulo, provinciaubicacion.Provincia, imgLugar, descripcion 
+	FROM lugarTuristico
+	INNER JOIN provinciaUbicacion
+	ON lugarTuristico.idUbicacion = provinciaUbicacion.idUbicacion;
 END $$
 DELIMITER ;
 
@@ -341,5 +344,23 @@ BEGIN
 	ELSE
 		SELECT 'DATOS NO ENCONTRADOS EN LA BASE DATOS';
 	END IF;
+END $$
+DELIMITER ;
+
+
+/*
+* LISTAMOS EL LUGAR TURISTICO SEGUN EL ID DEL LUGAR QUE DEBEMOS OBTENER....
+*/
+DELIMITER $$
+CREATE PROCEDURE MasInfo_Lugar 
+(
+	_idLugar CHAR(4)
+)
+BEGIN
+	SELECT DISTINCT titulo, provinciaubicacion.Provincia, imgLugar, descripcion 
+	FROM lugarTuristico
+	INNER JOIN provinciaUbicacion
+	ON lugarTuristico.idUbicacion = provinciaUbicacion.idUbicacion
+	WHERE lugarTuristico.idLugar = _idLugar;
 END $$
 DELIMITER ;
