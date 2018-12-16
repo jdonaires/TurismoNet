@@ -35,7 +35,7 @@ $resl = $list->List_LugarPri();
           </div>
           <div class="contenedor-2">
             <p class="parrafo"><?php echo $value->__GET('descripcion'); ?></p>
-            <input id="abrir" type="submit" name="mas_info" value="Mostrar mas">
+            <input id="abrir1" type="submit" name="mas_info" value="Mostrar mas">
             <!-- <input  type="submit" id="abrir" onclick="mostrar(abrir)" name="" value="Mostrar mas"> -->
           </div>
         </div>

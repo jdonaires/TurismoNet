@@ -102,7 +102,7 @@
 	display: block;
 	padding: 5px 5px;
 	margin: 10px auto;
-	background: rgba(0, 0, 0, 0.5);
+	/* background: rgba(0, 0, 0, 0.5); */
 	width: 90%;
 	border-radius: 5px;
   display: -webkit-flex;
@@ -121,7 +121,44 @@
 .contenido-servicios .contenido-imagen img {
 	width: 100%;
 	height: 150px;
-	background: rgba(0, 0, 0, 0);
+	/* background: rgba(0, 0, 0, 0); */
 	border-radius: 5px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.contenido-servicios .contenido_descServicio h4 {
+	padding: 5px 0px;
+	font-size: 15px;
+	font-family: Arial;
+}
+
+.contenido-servicios .contenido_descServicio p {
+	padding: 5px 0px;
+	font-size: 15px;
+	font-family: Arial;
+	text-align: justify;
+}
+
+.contenido-servicios .contenido_descServicio {
+	width: 100%;
+	padding: 5px 5px;
+}
+
+.contenido-servicios .contenido_descServicio input[type="submit"] {
+	padding: 5px 0px;
+	color: #fff;
+	font-size: 15px;
+	font-family: Arial;
+	text-align: center;
+	background: rgba(43, 30, 254, 1);
+	width: 35%;
+	height: 35px;
+	border: none;
+	border-radius: 5px;
+	transition: all .5s ease;
+}
+
+.contenido-servicios .contenido_descServicio input[type="submit"]:hover {
+	background: rgba(19, 7, 212, 1);
+	border-bottom: 2px solid rgba(25, 19, 123, 1);
 }

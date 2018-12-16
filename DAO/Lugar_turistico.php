@@ -112,36 +112,6 @@ class TuristicoDAO
 			die($e->getMessage());
 		}
 	}
-
-	// MOSTRAR EL LUGAR TURISTICO SEGUN TU ID DEL LUGAR
-	public function MasInfo_Lugar(Turistico $persona)
-	{
-		try
-		{
-			$info = array();
-
-			$statement = $this->pdo->prepare("CALL MasInfo_Lugar (?)");
-			$statement->bindParam(1,$persona->__GET('idLugar'));
-			$statement->execute();
-
-			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r) {
-				$per = new Turistico();
-
-				$per->__SET('titulo', 			$r->titulo);
-				$per->__SET('Provincia', 		$r->Provincia);
-				$per->__SET('imgLugar', 		$r->imgLugar);
-				$per->__SET('descripcion', 	$r->descripcion);
-
-				$info[]=$per;
-
-				header("Location: index.php");
-			}
-			return $info;
-		} catch (Exception $e)
-		{
-			die($e->getMessage());
-		}
-	}
 }
 
 ?>
