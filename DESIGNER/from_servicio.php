@@ -79,7 +79,7 @@ $resl = $list->List_LugarTitulo();
            ?>
         </select>
 
-        <input type="submit" name="agregar_servicio" value="Registrar Servicio">
+        <input type="submit" id="update_Servicio" name="agregar_servicio" value="Registrar Servicio">
       </form>
     </div>
   </body>

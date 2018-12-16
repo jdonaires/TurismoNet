@@ -86,7 +86,7 @@ if (!isset($nameUser)&&!isset($tipoUsuario))
         </div>
       </div>
       <div class="sub-contenido-2" id="iframe">
-        <?php include "from_servicio.php"; ?>
+        <?php include "frm_bienvenido.php"; ?>
       </div>
     </div>
 
