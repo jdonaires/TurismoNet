@@ -54,9 +54,9 @@ class ServicioDAO
       $resultadoList = array();
 
       $statement = $this->pdo->prepare("CALL listServicioUsuario (?,?,?)");
-      $statement->bindParam(1,$servicio->__GET('nombreEmpresa'),PDO::PARAM_STR);
-      $statement->bindParam(2,$servicio->__GET('razonSocial'),PDO::PARAM_STR);
-      $statement->bindParam(3,$servicio->__GET('ruc'),PDO::PARAM_STR);
+      $statement->bindValue(1,$servicio->__GET('nombreEmpresa'),PDO::PARAM_STR);
+      $statement->bindValue(2,$servicio->__GET('razonSocial'),PDO::PARAM_STR);
+      $statement->bindValue(3,$servicio->__GET('ruc'),PDO::PARAM_STR);
       $statement->execute();
 
       foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
