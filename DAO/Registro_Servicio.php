@@ -108,9 +108,9 @@ class ServicioDAO
     {
       $modifilistar = array();
       $statement = $this->pdo->prepare("CALL lis_ServicioM(?,?,?)");
-      $statement->bindParam(1,$servicio->__GET('idservicioEmpresa'));
-      $statement->bindParam(2,$servicio->__GET('nombreEmpresa'));
-      $statement->bindParam(3,$servicio->__GET('ruc'));
+      $statement->bindValue(1,$servicio->__GET('idservicioEmpresa'));
+      $statement->bindValue(2,$servicio->__GET('nombreEmpresa'));
+      $statement->bindValue(3,$servicio->__GET('ruc'));
       $statement->execute();
 
       foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
@@ -123,7 +123,7 @@ class ServicioDAO
         $ModiList->__SET('imgServicio'        ,$r->imgServicio);
 
         $modifilistar[]=$ModiList;
-        header("Location: frm_modifServicio.php");
+        // header("Location: frm_modifServicio.php");
         // session_start();
       }
       return $modifilistar;

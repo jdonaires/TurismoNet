@@ -23,7 +23,6 @@ $lisServiContenedor=$lisServiDAO->Listar_servicios($lisServiBOL);
 
 // BUSCAMOS AL SERVICIO
 $listMoBOL = new ServicioBOL();
-$listMODAO = new ServicioDAO();
 $listArray = array();
 
 if (isset($_POST['Buscar']))
@@ -31,7 +30,8 @@ if (isset($_POST['Buscar']))
   $listMoBOL->__SET('idservicioEmpresa',  $_POST['idservicioEmpresa']);
   $listMoBOL->__SET('nombreEmpresa',      $nameUser);
   $listMoBOL->__SET('ruc',                $nameRuc);
-  $listArray=$listMODAO->lis_ServicioM($listMoBOL);
+  $listArray=$lisServiDAO->lis_ServicioM($listMoBOL);
+  header("Refresh:20; url=plantilla.php");
 }
  ?>
 
@@ -50,26 +50,21 @@ if (isset($_POST['Buscar']))
             <input type="text" name="idservicioEmpresa" value="" placeholder="Ingrese el ID">
             <input type="submit" name="Buscar" value="Buscar Servicio">
           </div>
-          <div class="datos">
-            <?php foreach ($listArray as $obj)
-            {
-              $nombre = $obj->__GET('nombreServicio');
-              $horario = $obj->__GET('horarioAtención');
-              $descrip = $obj->__GET('descripcionServicio');
-              $imgServis = $value->__GET('imgServicio');
-            }?>
-            <div class="datos-1">
-                <input type="text" name="nombreServicio" value="<?php echo $nombre ?>">
-                <input type="text" name="horarioAtención" value="<?php echo $horario ?>">
-                <input type="text" name="descripcionServicio" value="<?php echo $descrip ?>">
+          <?php foreach ($listArray as $k): ?>
+            <div class="datos">
+              <div class="datos-1">
+                <input type="text" name="nombreServicio" value="<?php echo $k->__GET('nombreServicio'); ?>">
+                <input type="text" name="horarioAtención" value="<?php echo $k->__GET('horarioAtención'); ?>">
+                <input type="text" name="descripcionServicio" value="<?php echo $k->__GET('descripcionServicio'); ?>">
+              </div>
+              <div class="datos-2">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($k->__GET('imgServicio')) ?>">
+              </div>
             </div>
-            <div class="datos-2">
-              <img src="data:image/jpg;base64, <?php echo base64_encode($imgServis); ?>">
-            </div>
-          </div>
+          <?php endforeach; ?>
         </form>
         <form class="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-          <input type="submit" name="" value="Actualizar Datos">
+          <input type="submit" name="actualizar" value="Actualizar Datos">
         </form>
       </div>
       <div class="contenido-tabla">
