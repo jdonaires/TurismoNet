@@ -9,6 +9,11 @@ $nameUser=$_SESSION['usuario_nombre'];
 $nameRS=$_SESSION['usuario_razonSocial'];
 $nameRuc=$_SESSION['usuario_ruc'];
 
+if (!isset($nameUser)&&!isset($nameRS))
+{
+  header('Location: index.php');
+}
+
 
 // LISTAMOS LOS SERVICIOS ACTIVOS
 $lisServiBOL = new ServicioBOL();

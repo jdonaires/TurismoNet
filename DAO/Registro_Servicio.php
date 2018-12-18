@@ -123,7 +123,7 @@ class ServicioDAO
         $ModiList->__SET('imgServicio'        ,$r->imgServicio);
 
         $modifilistar[]=$ModiList;
-        header("Location: plantilla.php/frm_modifServicio.php");
+        // header("Location: plantilla.php/frm_modifServicio.php");
         // session_start();
       }
       return $modifilistar;
