@@ -181,6 +181,20 @@
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+.dividir-contenido .contenido-actualizar .datos .datos-1 textarea{
+  padding: 5px 5px;
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  text-align: justify;
+  font-size: 13px;
+  font-family: Arial;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .dividir-contenido .contenido-actualizar .datos .datos-2 {
   width: 40%;
   /* background: rgba(0, 0, 0, 0.5); */

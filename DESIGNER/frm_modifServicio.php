@@ -31,7 +31,11 @@ if (isset($_POST['Buscar']))
   $listMoBOL->__SET('nombreEmpresa',      $nameUser);
   $listMoBOL->__SET('ruc',                $nameRuc);
   $listArray=$lisServiDAO->lis_ServicioM($listMoBOL);
-  header("Refresh:20; url=plantilla.php");
+}
+
+if (isset($_POST['actualizar']))
+{
+
 }
  ?>
 
@@ -44,24 +48,32 @@ if (isset($_POST['Buscar']))
   <body>
     <div class="dividir-contenido">
       <div class="contenido-actualizar">
-        <form class="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" enctype="multipart/form-data">
+        <form class=""  onsubmit=""  method="post" enctype="multipart/form-data">
           <h3>Actualizar Datos</h3>
           <div class="buscar">
-            <input type="text" name="idservicioEmpresa" value="" placeholder="Ingrese el ID">
+            <input id="idservicioEmpresa" type="text" name="idservicioEmpresa" value="" placeholder="Ingrese el ID del Servicio">
+            <input id="nombrerUser" type="hidden" name="nombrerUser" value="<?php echo $nameUser; ?>">
+            <input id="numeroRuc" type="hidden" name="numeroRuc" value="<?php echo $nameRuc; ?>">
             <input type="submit" name="Buscar" value="Buscar Servicio">
           </div>
           <?php foreach ($listArray as $k): ?>
-            <div class="datos">
-              <div class="datos-1">
-                <input type="text" name="nombreServicio" value="<?php echo $k->__GET('nombreServicio'); ?>">
-                <input type="text" name="horarioAtención" value="<?php echo $k->__GET('horarioAtención'); ?>">
-                <input type="text" name="descripcionServicio" value="<?php echo $k->__GET('descripcionServicio'); ?>">
-              </div>
-              <div class="datos-2">
-                <img src="data:image/jpg;base64,<?php echo base64_encode($k->__GET('imgServicio')) ?>">
-              </div>
-            </div>
+            <?php
+            $name= $k->__GET('nombreServicio');
+            $horario= $k->__GET('horarioAtención');
+            $desc= $k->__GET('descripcionServicio');
+            $img=$k->__GET('imgServicio');
+             ?>
           <?php endforeach; ?>
+          <div class="datos">
+            <div class="datos-1">
+              <input type="text" name="nombreServicio" value="<?php if (empty($name)){ echo ""; }else { echo $name; }?>">
+              <input type="text" name="horarioAtención" value="<?php if (empty($horario)){ echo ""; }else { echo $horario; }?>">
+              <textarea name="descripcionServicio" rows="8" cols="80"><?php if (empty($desc)){ echo ""; }else { echo $desc; } ?></textarea>
+            </div>
+            <div class="datos-2">
+              <img src="data:image/jpg;base64,<?php if (empty($img)){ echo ""; }else { echo base64_encode($img); } ?>">
+            </div>
+          </div>
         </form>
         <form class="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
           <input type="submit" name="actualizar" value="Actualizar Datos">
@@ -101,4 +113,6 @@ if (isset($_POST['Buscar']))
       </div>
     </div>
   </body>
+  <!-- <script type="text/javascript" src="JS/jquery-3.3.1.min.js">></script> -->
+  <!-- <script type="text/javascript" src="JS/servicio.js"></script> -->
 </html>
