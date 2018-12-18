@@ -6,6 +6,9 @@ require_once('../DAO/Lugar_turistico.php');
 $list = new TuristicoDAO();
 $resl = array();
 $resl = $list->List_LugarPri();
+
+
+// LISTAR SERVICIOS ACTIVOS SEGUN EL LUGAR
  ?>
 
 <!DOCTYPE html>
@@ -37,7 +40,7 @@ $resl = $list->List_LugarPri();
             <p class="parrafo"><?php echo $value->__GET('descripcion'); ?></p>
             <?php $i=0;
             $a = $i + 1;?>
-            <input  type="submit" id="<?php echo "abrir".$a; ?>" name="" value="Mostrar mas">
+            <input  type="button" id="<?php echo "abrir".$a; ?>" name="" value="Mostrar mas">
             <!-- <input  type="submit" id="abrir" onclick="mostrar(abrir)" name="" value="Mostrar mas"> -->
           </div>
         </div>

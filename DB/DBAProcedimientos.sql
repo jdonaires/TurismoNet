@@ -162,7 +162,7 @@ BEGIN
 	IF _evaluarRuc = _ruc THEN
 		SELECT 'LA EMPRESA SE ENCUENTRA REGISTRADA';
 	ELSE
-		IF _idEmpresa <> '' THEN
+		IF _idEmpresa != '' THEN
 
 			INSERT INTO Empresa (idEmpresa,nombreEmpresa,razonSocial,ruc,correoEmpresa,dirrecion,descripcion,celular,fijo,EmpresaImage)
 			VALUES (_idEmpresa,_nombreEmpresa,_razonSocial,_ruc,_correoEmpresa,_dirrecion,_descripcion,_celular,_fijo,_empreImg);
