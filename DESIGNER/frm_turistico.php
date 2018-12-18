@@ -34,7 +34,7 @@ if(isset($_POST['guardar']))
   $per->__SET('Provincia',             $_POST['Provincia']);
 	$per->__SET('fecha',                    $new_date);
 	$perDAO->Registrar_Turistico($per);
-	header('Location: frm_turistico.php');
+	header('Location: plantilla.php');
 }
 
 

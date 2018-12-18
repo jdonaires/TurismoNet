@@ -5,6 +5,11 @@ require_once('../DAO/Registro_Servicio.php');
 require_once('../DAO/Registro_Provincia.php');
 require_once('../DAO/Lugar_turistico.php');
 
+session_start();
+$nameUser=$_SESSION['usuario_nombre'];
+$nameRS=$_SESSION['usuario_razonSocial'];
+$nameRuc=$_SESSION['usuario_ruc'];
+
 $servicioBOL = new ServicioBOL();
 $servicioDAO = new ServicioDAO();
 
@@ -50,8 +55,8 @@ $resl = $list->List_LugarTitulo();
         <input type="hidden" name="nombreEmpresa" value="<?php echo $nameUser ?>">
         <input type="hidden" name="razonSocial" value="<?php echo $nameRS ?>">
         <input type="hidden" name="ruc" value="<?php echo $nameRuc ?>">
-        <input type="text" name="nombreServicio" value="" placeholder="Agregar el Nombre del Servicio" required>
-        <input type="text" name="horarioAtención" value="" placeholder="Ingrese su Horario de Atención" required>
+        <input type="text" name="nombreServicio" value="" placeholder="Agregar el Nombre del Servicio" required maxlength="50">
+        <input type="text" name="horarioAtención" value="" placeholder="Ingrese su Horario de Atención" required maxlength="30">
         <div class="contenido-descripcion">
           <textarea name="descripcionServicio" rows="8" cols="80" placeholder="Agregar una pequeña descripción del Servicio a Brinda" required></textarea>
           <div class="img-file">

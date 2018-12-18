@@ -364,3 +364,11 @@ BEGIN
 	WHERE lugarTuristico.idLugar = _idLugar;
 END $$
 DELIMITER ;
+
+
+
+
+/*
+* INSERTAR VALOR COMO ADMIN
+*/
+CALL regEmpresa('admin','admin','TurismoNet','S.A.C.','20751621951','Av.Alfonso Ugarte','Somos una Empresa dedicada a brindar servicio de Guias turisticos, etc.','927678692','056321456','Admin','');

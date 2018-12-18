@@ -105,7 +105,7 @@ CREATE TABLE servicioEmpresa (
  estadoServicio CHAR(1) NOT NULL, -- PARA SABER SI EL SERVICIO ESTA ACTIVO O NO
  
  CONSTRAINT pk_idservicioEmpresa PRIMARY KEY (idservicioEmpresa),
- CONSTRAINT fk_idEmpresaServicio FOREIGN KEY (idEmpresa) REFERENCES Empresa (idEmpresa),
+ -- CONSTRAINT fk_idEmpresaServicio FOREIGN KEY (idEmpresa) REFERENCES Empresa (idEmpresa),
  CONSTRAINT fk_lugarId FOREIGN KEY (idLugar) REFERENCES LugarTuristico (idLugar),
  CONSTRAINT fk_idProvincia FOREIGN KEY (idUbicacion) REFERENCES ProvinciaUbicacion (idUbicacion),
  CONSTRAINT chek_estadoServicio CHECK (estadoServicio IN ('1','0'))

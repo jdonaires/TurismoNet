@@ -25,7 +25,7 @@ if (!isset($nameUser)&&!isset($tipoUsuario))
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- TIEMPO EN MILISEGUNDOS PARA QUE LA PÁG SE RECARGUE TRAS INACTIVIDAD-->
-    <script>setTimeout('document.location.reload()',120000); </script>
+    <script>setTimeout('document.location.reload()',300000); </script>
   </head>
   <body>
     <div class="cabecera">

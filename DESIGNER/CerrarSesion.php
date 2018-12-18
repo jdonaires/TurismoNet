@@ -24,7 +24,7 @@ if (isset($_POST['salir']))
 // TIEMPO DE INACTIVIDAD
 if (isset($_SESSION['tiempo']))
 {
-  $inactivo = 120;
+  $inactivo = 300;
 
   $vida_session = time() - $_SESSION['tiempo'];
   if ($vida_session > $inactivo)
