@@ -9,6 +9,12 @@ $resl = $list->List_LugarPri();
 
 
 // LISTAR SERVICIOS ACTIVOS SEGUN EL LUGAR
+// $serviBOL = new Turistico();
+// $serviDAO = new TuristicoDAO();
+// $serviRel = array();
+// $serviBOL->__SET('idLugar', $dato);
+// $serviRel=$serviDAO->MostrarInfoServicio($serviBOL);
+
  ?>
 
 <!DOCTYPE html>
@@ -32,7 +38,7 @@ $resl = $list->List_LugarPri();
         ?>
         <div class="sub-contenedor">
           <div class="contenedor-1">
-            <?php $idLu = $value->__GET('idLugar'); ?>
+            <?php $dato = $value->__GET('idLugar'); ?>
             <h3><?php echo $value->__GET('titulo'); ?></h3>
             <img src="data:image/jpg;base64, <?php echo base64_encode($value->__GET('imgLugar'))?>">
           </div>
@@ -44,6 +50,11 @@ $resl = $list->List_LugarPri();
             <!-- <input  type="submit" id="abrir" onclick="mostrar(abrir)" name="" value="Mostrar mas"> -->
           </div>
         </div>
+
+          <?php
+        }
+         ?>
+
         <!-- VENTANA MODAL -->
         <div id="miModal" class="modal">
           <div class="flex" id="flex">
@@ -60,24 +71,51 @@ $resl = $list->List_LugarPri();
                 </div>
 
                 <!-- LISTAMOS LOS SERVICIOS ASOCIADOS AL LUGA TURISTICO -->
+                <?php
+                // LISTAR SERVICIOS ACTIVOS SEGUN EL LUGAR
+                $serviBOL = new Turistico();
+                $serviDAO = new TuristicoDAO();
+                $serviRel = array();
+                $serviBOL->__SET('idLugar', $dato);
+                $serviRel=$serviDAO->MostrarInfoServicio($serviBOL);
+                 ?>
+
+                 <?php foreach ($serviRel as $k)
+                 {
+                   $titulo= $k->__GET('nombreServicio');
+                   $direccion= $k->__GET('Provincia');
+                   $horario= $k->__GET('horarioAtención');
+                   $descr= $k->__GET('descripcionServicio');
+                   $img= $k->__GET('imgServicio');
+                 } ?>
                 <div class="contenido-servicios">
-                  <div class="contenido-imagen"> <img src=""></div>
+                  <div class="contenido-imagen"> <img src="data:image/jpg;base64, <?php if (empty($img)){ echo ""; } else { echo base64_encode($img); } ?>"></div>
                   <div class="contenido_descServicio">
-                    <h4>Titúlo: </h4>
-                    <h4>Dirreción: </h4>
-                    <p>Horario: </p>
-                    <p>Descripción: </p>
+                    <h4>Titúlo: <?php if (empty($titulo)){ echo ""; }else { echo $titulo; } ?></h4>
+                    <h4>Dirreción: <?php if (empty($direccion)){ echo ""; }else { echo $direccion; } ?></h4>
+                    <p>Horario: <?php if (empty($horario)){ echo ""; }else { echo $horario; } ?></p>
+                    <p>Descripción: <?php if (empty($descr)){ echo ""; }else { echo $descr; } ?></p>
                     <input type="submit" name="" value="Adquirir Servicio">
                   </div>
                 </div>
+                <?php // foreach ($serviRel as $rp): ?>
+                  <!-- <div class="contenido-servicios">
+                    <div class="contenido-imagen"> <img src="data:image/jpg;base64, <?php // echo base64_encode($rp->__GET('imgServicio')); ?>"></div>
+                    <div class="contenido_descServicio">
+                      <h4>Titúlo: <?php // echo $rp->__GET('nombreServicio'); ?></h4>
+                      <h4>Dirreción: <?php // echo $rp->__GET('Provincia'); ?></h4>
+                      <p>Horario: <?php // echo $rp->__GET('horarioAtención'); ?></p>
+                      <p>Descripción: <?php // echo $rp->__GET('descripcionServicio'); ?></p>
+                      <input type="submit" name="" value="Adquirir Servicio">
+                    </div>
+                  </div> -->
+                <?php // endforeach; ?>
               </div>
             </div>
           </div>
         </div>
 
-        <?php
-      }
-       ?>
+
 
     </div>
     <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>

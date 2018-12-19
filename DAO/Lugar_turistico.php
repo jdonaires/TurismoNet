@@ -112,6 +112,35 @@ class TuristicoDAO
 			die($e->getMessage());
 		}
 	}
+
+	// MOSTRAR LUGARES
+	public function MostrarInfoServicio(Turistico $persona)
+	{
+		try
+		{
+			$reslt = array();
+
+			$statement = $this->pdo->prepare("CALL mostrarServicio_Lugar(?)");
+			$statement->bindValue(1,$persona->__GET('idLugar'));
+			$statement->execute();
+
+			foreach ($statement->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$mostrar = new Turistico();
+
+				$mostrar->__SET('nombreServicio',				$r->nombreServicio);
+				$mostrar->__SET('Provincia',						$r->Provincia);
+				$mostrar->__SET('horarioAtención',			$r->horarioAtención);
+				$mostrar->__SET('descripcionServicio',	$r->descripcionServicio);
+				$mostrar->__SET('imgServicio',					$r->imgServicio);
+
+				$reslt[] = $mostrar;
+			}
+			return $reslt;
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
 }
 
 ?>

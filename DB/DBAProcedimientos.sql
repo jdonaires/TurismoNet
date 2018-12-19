@@ -366,6 +366,19 @@ END $$
 DELIMITER ;
 
 
+DELIMITER $$
+CREATE PROCEDURE mostrarServicio_Lugar
+(
+	_idLugar CHAR(4)
+)
+BEGIN
+	SELECT DISTINCT nombreServicio, provinciaubicacion.Provincia, horarioAtención, descripcionServicio, imgServicio 
+	FROM servicioEmpresa
+	INNER JOIN provinciaUbicacion
+	ON servicioEmpresa.idUbicacion = provinciaUbicacion.idUbicacion
+	WHERE idLugar = _idLugar AND estadoServicio='1';
+END $$
+DELIMITER ;
 
 
 /*

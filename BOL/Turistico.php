@@ -8,6 +8,10 @@ class Turistico
 	private $idUbicacion;
 	private $fecha;
 	private $Provincia;
+	private $nombreServicio;
+	private $horarioAtención;
+	private $descripcionServicio;
+	private $imgServicio;
 
 	public function __GET($x)
 	{
